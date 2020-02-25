@@ -22,35 +22,48 @@ namespace BudgeIt
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Calendar form = new Calendar();
-            form.sqlConnection = sqlConnection;
-            form.Show();
+
+            SqlCommand cmdCheckLogin = sqlConnection.CreateCommand();
+
+            cmdCheckLogin.CommandText = "SELECT userName, password FROM USERS WHERE userName = @uName AND  password = @pass";
+            cmdCheckLogin.Parameters.AddWithValue("@uName", txtUserName.Text);
+            cmdCheckLogin.Parameters.AddWithValue("@pass", txtPassword.Text);
+
+
+            SqlDataReader reader = cmdCheckLogin.ExecuteReader();
+
+            if (reader.Read())
+            {
+                MessageBox.Show("Worked");
+                Calendar form = new Calendar();
+                form.sqlConnection = sqlConnection;
+                form.Show();
+            }
+            reader.Close();
+    
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
             try
             {
-                /*sqlConnection.ConnectionString =
-                    "Data Source=SERVERNAME;" + // Change to your server name ------------
-                    "Initial Catalog=BudgeIt;" +
-                    "Integrated Security=True";
-                sqlConnection.Open();*/
-                //MessageBox.Show("Testting");
                 sqlConnection.ConnectionString =
-                    "Data Source=NATE-SURFACE;" +
-                    "Initial Catalog=BudgeIt;" +
-                    "Integrated Security=True";
+                        "Data Source=DESKTOP-GJ2VEDA\\MSSQLSERVER02;" +
+                        "Initial Catalog=BudgeIt;" +
+                        "Integrated Security=True";
                 sqlConnection.Open();
 
-                //MessageBox.Show("Connected to DB");
-
-
+                //MessageBox.Show("Connected");
+             
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
+
         }
+         
+        
     }
 }
