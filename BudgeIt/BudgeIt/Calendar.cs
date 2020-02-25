@@ -13,7 +13,7 @@ namespace BudgeIt
 {
     public partial class Calendar : Form
     {
-        SqlConnection sqlConnection = new SqlConnection();
+        public SqlConnection sqlConnection = new SqlConnection();
 
         public Calendar()
         {
@@ -24,32 +24,7 @@ namespace BudgeIt
         {
             try
             {
-                /*sqlConnection.ConnectionString =
-                    "Data Source=SERVERNAME;" + // Change to your server name ------------
-                    "Initial Catalog=BudgeIt;" +
-                    "Integrated Security=True";
-                sqlConnection.Open();*/
-                MessageBox.Show("Testting");
-                sqlConnection.ConnectionString =
-                    "Data Source=NATE-SURFACE;" +
-                    "Initial Catalog=BudgeIt;" +
-                    "Integrated Security=True";
-                sqlConnection.Open();
-
-                MessageBox.Show("Connected to DB");
-
-                SqlCommand cmdTest =  sqlConnection.CreateCommand();
-                cmdTest.CommandText = "SELECT Fname , Lname FROM USERS ";
-
-                SqlDataReader reader = cmdTest.ExecuteReader();
-
-                if(reader.Read())
-                {
-                        RTBTesting.Text = RTBTesting.Text + reader[0].ToString().Trim() + " " + reader[1].ToString().Trim();
-                }
-
-
-
+                
             }
             catch (Exception ex)
             {
