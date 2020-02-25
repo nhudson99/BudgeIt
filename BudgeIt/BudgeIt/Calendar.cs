@@ -24,12 +24,22 @@ namespace BudgeIt
         {
             try
             {
-                
+                txtBox1.Text = "Nathan";   
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
