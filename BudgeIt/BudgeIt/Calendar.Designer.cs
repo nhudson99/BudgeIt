@@ -35,27 +35,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 20);
+            this.label1.Location = new System.Drawing.Point(20, 13);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 25);
+            this.label1.Size = new System.Drawing.Size(98, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Good Morning";
             // 
             // RTBTesting
             // 
-            this.RTBTesting.Location = new System.Drawing.Point(424, 252);
+            this.RTBTesting.Location = new System.Drawing.Point(283, 161);
+            this.RTBTesting.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RTBTesting.Name = "RTBTesting";
-            this.RTBTesting.Size = new System.Drawing.Size(819, 509);
+            this.RTBTesting.Size = new System.Drawing.Size(547, 327);
             this.RTBTesting.TabIndex = 1;
             this.RTBTesting.Text = "";
             // 
             // Calendar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1647, 1003);
+            this.ClientSize = new System.Drawing.Size(1098, 642);
             this.Controls.Add(this.RTBTesting);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Calendar";
             this.Text = "Calendar";
             this.Load += new System.EventHandler(this.Calendar_Load);

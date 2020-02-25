@@ -29,6 +29,7 @@ namespace BudgeIt
                     "Initial Catalog=BudgeIt;" +
                     "Integrated Security=True";
                 sqlConnection.Open();*/
+                
                 MessageBox.Show("Testting");
                 sqlConnection.ConnectionString =
                     "Data Source=NATE-SURFACE;" +
@@ -45,7 +46,8 @@ namespace BudgeIt
 
                 if(reader.Read())
                 {
-                        RTBTesting.Text = RTBTesting.Text + reader[0].ToString().Trim() + " " + reader[1].ToString().Trim();
+                    Console.WriteLine("Income");
+                    RTBTesting.Text = RTBTesting.Text + reader[0].ToString().Trim() + " " + reader[1].ToString().Trim();
                 }
 
 
