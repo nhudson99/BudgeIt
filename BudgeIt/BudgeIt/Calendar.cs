@@ -32,9 +32,12 @@ namespace BudgeIt
             depo.ShowDialog();
         }
 
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
+            Word.Cell cell = this.table[1].Cell(1, 1);
 
+            cell.Range.Text = "Mon";
+            cell.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphRight;
         }
     }
 }
