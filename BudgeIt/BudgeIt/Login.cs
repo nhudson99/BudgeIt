@@ -36,7 +36,7 @@ namespace BudgeIt
             {
                 MessageBox.Show("Worked");
                 Calendar form = new Calendar();
-                form.sqlConnection = sqlConnection;
+                form.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
                 form.Show();
             }
             reader.Close();
@@ -47,8 +47,13 @@ namespace BudgeIt
         {
             try
             {
+                /* Connection strings servers 
+                 * USE YOURS
+                 * Data Source=DESKTOP-GJ2VEDA\\MSSQLSERVER02; - 
+                 * Data Source=NATE-SURFACE; - Nate
+                 * */
                 sqlConnection.ConnectionString =
-                        "Data Source=DESKTOP-GJ2VEDA\\MSSQLSERVER02;" +
+                        "Data Source=NATE-SURFACE;" +
                         "Initial Catalog=BudgeIt;" +
                         "Integrated Security=True";
                 sqlConnection.Open();

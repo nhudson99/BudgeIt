@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BudgeIt
@@ -24,7 +17,7 @@ namespace BudgeIt
         {
             try
             {
-                txtBox1.Text = "Nathan";   
+                   
             }
             catch (Exception ex)
             {
@@ -32,14 +25,11 @@ namespace BudgeIt
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void btnDeposit_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            Deposit depo = new Deposit();
+            depo.sqlConnection1.ConnectionString = sqlConnection.ConnectionString;
+            depo.ShowDialog();
         }
     }
 }
