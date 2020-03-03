@@ -56,7 +56,6 @@
             this.label3.Size = new System.Drawing.Size(81, 25);
             this.label3.TabIndex = 4;
             this.label3.Text = "Income";
-            
             // 
             // label2
             // 
@@ -67,7 +66,6 @@
             this.label2.Size = new System.Drawing.Size(119, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Disposable";
-            
             // 
             // label4
             // 
@@ -109,6 +107,7 @@
             this.btnWithdraw.TabIndex = 9;
             this.btnWithdraw.Text = "Withdraw";
             this.btnWithdraw.UseVisualStyleBackColor = true;
+            this.btnWithdraw.Click += new System.EventHandler(this.btnWithdraw_Click);
             // 
             // btnBills
             // 

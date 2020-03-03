@@ -31,5 +31,11 @@ namespace BudgeIt
             depo.sqlConnection1.ConnectionString = sqlConnection.ConnectionString;
             depo.ShowDialog();
         }
+
+        private void btnWithdraw_Click(object sender, EventArgs e)
+        {
+            Withdraw withd = new Withdraw();
+            
+        }
     }
 }
