@@ -63,7 +63,11 @@ namespace BudgeIt
 
 
         }
-         
-        
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            UserRegistration2 frm = new UserRegistration2();
+            frm.ShowDialog();
+        }
     }
 }
