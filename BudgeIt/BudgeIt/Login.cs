@@ -49,7 +49,7 @@ namespace BudgeIt
             {
                 /* Connection strings servers 
                  * USE YOURS
-                 * Data Source=DESKTOP-GJ2VEDA\\MSSQLSERVER02; - 
+                 * Data Source=DESKTOP-GJ2VEDA\\MSSQLSERVER02; - NILES
                  * Data Source=NATE-SURFACE; - Nate
                  * */
                 sqlConnection.ConnectionString =

@@ -32,6 +32,12 @@ namespace BudgeIt
             depo.ShowDialog();
         }
 
+        private void btnWithdraw_Click(object sender, EventArgs e)
+        {
+            Withdraw withd = new Withdraw();
+            
+        }
+
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
             
