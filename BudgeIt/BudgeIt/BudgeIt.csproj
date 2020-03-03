@@ -107,6 +107,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Withdraw.resx">
+      <DependentUpon>Withdraw.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserRegistration2.resx">
       <DependentUpon>UserRegistration2.cs</DependentUpon>
     </EmbeddedResource>
