@@ -122,7 +122,7 @@
             this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
             this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
             this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
+            this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
             this.CalendarTable.Location = new System.Drawing.Point(283, 178);
             this.CalendarTable.Name = "CalendarTable";
             this.CalendarTable.RowCount = 7;
@@ -135,6 +135,7 @@
             this.CalendarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.CalendarTable.Size = new System.Drawing.Size(428, 295);
             this.CalendarTable.TabIndex = 11;
+            this.CalendarTable.Paint += new System.Windows.Forms.PaintEventHandler(this.CalendarTable_Paint);
             // 
             // Calendar
             // 
@@ -150,7 +151,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Calendar";
             this.Text = "Calendar";
             this.Load += new System.EventHandler(this.Calendar_Load);
