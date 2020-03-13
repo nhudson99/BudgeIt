@@ -4,39 +4,37 @@ using System.Windows.Forms;
 
 namespace BudgeIt
 {
-    private void CreateCustomCalendar()
+    public partial class Calendar : Form
     {
-        const string newCalendarName = "PersonalCalendar";
-        Outlook.MAPIFolder primaryCalendar = (Outlook.MAPIFolder)
-            this.Application.ActiveExplorer().Session.GetDefaultFolder
-             (Outlook.OlDefaultFolders.olFolderCalendar);
-        bool needFolder = true;
-        foreach (Outlook.MAPIFolder personalCalendar
-            in primaryCalendar.Folders)
+        public SqlConnection sqlConnection = new SqlConnection();
+
+        public Calendar()
         {
-            if (personalCalendar.Name == newCalendarName)
+            InitializeComponent();
+        }
+
+        private void Calendar_Load(object sender, EventArgs e)
+        {
+            try
             {
-                needFolder = false;
-                break;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
-        if (needFolder)
+
+        private void btnDeposit_Click(object sender, EventArgs e)
         {
-            Outlook.MAPIFolder personalCalendar = primaryCalendar
-                .Folders.Add(newCalendarName,
-                    Outlook.OlDefaultFolders.olFolderCalendar);
-            Outlook.AppointmentItem newEvent =
-                personalCalendar.Items.Add
-                (Outlook.OlItemType.olAppointmentItem)
-                as Outlook.AppointmentItem;
-            newEvent.Start = DateTime.Now.AddHours(1);
-            newEvent.End = DateTime.Now.AddHours(1.25);
-            newEvent.Subject = "New plan";
-            newEvent.Body = " Meet to discuss new plan.";
-            newEvent.Save();
+            Deposit depo = new Deposit();
+            depo.sqlConnection1.ConnectionString = sqlConnection.ConnectionString;
+            depo.ShowDialog();
         }
-        Application.ActiveExplorer().SelectFolder(primaryCalendar
-            .Folders[newCalendarName]);
-        Application.ActiveExplorer().CurrentFolder.Display();
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
