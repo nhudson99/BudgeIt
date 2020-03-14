@@ -36,10 +36,10 @@
             this.btnDeposit = new System.Windows.Forms.Button();
             this.btnWithdraw = new System.Windows.Forms.Button();
             this.btnBills = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Expenses = new System.Windows.Forms.TextBox();
+            this.Disposable = new System.Windows.Forms.TextBox();
+            this.Income = new System.Windows.Forms.TextBox();
+            this.Name = new System.Windows.Forms.TextBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.SuspendLayout();
             // 
@@ -117,33 +117,33 @@
             this.btnBills.Text = "Bills";
             this.btnBills.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // Expenses
             // 
-            this.textBox1.Location = new System.Drawing.Point(373, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 12;
+            this.Expenses.Location = new System.Drawing.Point(373, 38);
+            this.Expenses.Name = "Expenses";
+            this.Expenses.Size = new System.Drawing.Size(100, 22);
+            this.Expenses.TabIndex = 12;
             // 
-            // textBox2
+            // Disposable
             // 
-            this.textBox2.Location = new System.Drawing.Point(373, 77);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 13;
+            this.Disposable.Location = new System.Drawing.Point(373, 77);
+            this.Disposable.Name = "Disposable";
+            this.Disposable.Size = new System.Drawing.Size(100, 22);
+            this.Disposable.TabIndex = 13;
             // 
-            // textBox3
+            // Income
             // 
-            this.textBox3.Location = new System.Drawing.Point(373, 127);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 14;
+            this.Income.Location = new System.Drawing.Point(373, 127);
+            this.Income.Name = "Income";
+            this.Income.Size = new System.Drawing.Size(100, 22);
+            this.Income.TabIndex = 14;
             // 
-            // textBox4
+            // Name
             // 
-            this.textBox4.Location = new System.Drawing.Point(99, 13);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 15;
+            this.Name.Location = new System.Drawing.Point(99, 13);
+            this.Name.Name = "Name";
+            this.Name.Size = new System.Drawing.Size(100, 22);
+            this.Name.TabIndex = 15;
             // 
             // monthCalendar1
             // 
@@ -157,10 +157,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1098, 642);
             this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Name);
+            this.Controls.Add(this.Income);
+            this.Controls.Add(this.Disposable);
+            this.Controls.Add(this.Expenses);
             this.Controls.Add(this.btnBills);
             this.Controls.Add(this.btnWithdraw);
             this.Controls.Add(this.btnDeposit);
@@ -188,10 +188,10 @@
         private System.Windows.Forms.Button btnDeposit;
         private System.Windows.Forms.Button btnWithdraw;
         private System.Windows.Forms.Button btnBills;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox Expenses;
+        private System.Windows.Forms.TextBox Disposable;
+        private System.Windows.Forms.TextBox Income;
+        private System.Windows.Forms.TextBox Name;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }
