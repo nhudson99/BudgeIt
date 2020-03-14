@@ -36,5 +36,10 @@ namespace BudgeIt
         {
 
         }
+
+        private void CalendarTable_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
     }
 }
