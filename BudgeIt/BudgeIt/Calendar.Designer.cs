@@ -39,8 +39,8 @@
             this.Expenses = new System.Windows.Forms.TextBox();
             this.Disposable = new System.Windows.Forms.TextBox();
             this.Income = new System.Windows.Forms.TextBox();
-            this.Name = new System.Windows.Forms.TextBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.LBLName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -138,26 +138,28 @@
             this.Income.Size = new System.Drawing.Size(100, 22);
             this.Income.TabIndex = 14;
             // 
-            // Name
-            // 
-            this.Name.Location = new System.Drawing.Point(99, 13);
-            this.Name.Name = "Name";
-            this.Name.Size = new System.Drawing.Size(100, 22);
-            this.Name.TabIndex = 15;
-            // 
             // monthCalendar1
             // 
             this.monthCalendar1.Location = new System.Drawing.Point(373, 194);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 16;
             // 
+            // LBLName
+            // 
+            this.LBLName.AutoSize = true;
+            this.LBLName.Location = new System.Drawing.Point(100, 13);
+            this.LBLName.Name = "LBLName";
+            this.LBLName.Size = new System.Drawing.Size(46, 17);
+            this.LBLName.TabIndex = 17;
+            this.LBLName.Text = "label5";
+            // 
             // Calendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1098, 642);
+            this.Controls.Add(this.LBLName);
             this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.Name);
             this.Controls.Add(this.Income);
             this.Controls.Add(this.Disposable);
             this.Controls.Add(this.Expenses);
@@ -191,8 +193,8 @@
         private System.Windows.Forms.TextBox Expenses;
         private System.Windows.Forms.TextBox Disposable;
         private System.Windows.Forms.TextBox Income;
-        private System.Windows.Forms.TextBox Name;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Label LBLName;
     }
 }
 

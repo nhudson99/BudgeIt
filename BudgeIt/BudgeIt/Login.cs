@@ -53,7 +53,7 @@ namespace BudgeIt
                  * Data Source=NATE-SURFACE; - Nate
                  * */
                 sqlConnection.ConnectionString =
-                        "Data Source=NATE-SURFACE;" +
+                        "Data Source=DESKTOP-L3400E3;" +
                         "Initial Catalog=BudgeIt;" +
                         "Integrated Security=True";
                 sqlConnection.Open();
@@ -71,8 +71,8 @@ namespace BudgeIt
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            UserRegistration2 frm = new UserRegistration2();
-            frm.ShowDialog();
+            //UserRegistration2 frm = new UserRegistration2();
+            //frm.ShowDialog();
         }
     }
 }

@@ -17,7 +17,22 @@ namespace BudgeIt
         {
             try
             {
-                   
+                sqlConnection.Open();
+                SqlCommand cmdGetName = sqlConnection.CreateCommand();
+
+                cmdGetName.CommandText = "SELECT Fname FROM USERS WHERE userId = @uID";
+                cmdGetName.Parameters.AddWithValue("@uID", 1);
+
+
+                SqlDataReader reader = cmdGetName.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    MessageBox.Show("Worked");
+                    LBLName.Text = reader[0].ToString();
+
+                }
+                reader.Close();
             }
             catch (Exception ex)
             {
@@ -84,7 +99,7 @@ namespace BudgeIt
             con4.Open();
 
             SqlCommand cmd4 = new SqlCommand("", con4);
-            cmd4.Parameters.AddWithValue("", Name.Text);
+            cmd4.Parameters.AddWithValue("", LBLName.Text);
             SqlDataReader da4 = cmd4.ExecuteReader();
 
             con4.Close();
