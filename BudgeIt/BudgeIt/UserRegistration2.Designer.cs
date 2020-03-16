@@ -162,6 +162,7 @@
             this.btnSubmit.TabIndex = 13;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // UserRegistration2
             // 
