@@ -34,22 +34,22 @@ namespace BudgeIt
 
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
-            //Withdraw with = new Withdraw();
-            //with.sqlConnection1 = sqlConnection;
-            //with.ShowDialog();
+            Withdraw with = new Withdraw();
+            with.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
+            with.ShowDialog();
         }
 
         private void btnBills_Click(object sender, EventArgs e)
         {
             Bills bill = new Bills();
-            bill.sqlConnection = sqlConnection;
+            bill.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
             bill.ShowDialog();
         }
 
         private void btnTrans_Click(object sender, EventArgs e)
         {
             Transactions t = new Transactions();
-            t.sqlConnection = sqlConnection;
+            t.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
             t.ShowDialog();
         }
     }

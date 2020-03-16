@@ -171,8 +171,8 @@ namespace BudgeIt
         {
             // Making connection link to connect ( Deposit ) with ( Transactions ) ------------------------------ MAJED
 
-            UserTransactions U = new UserTransactions();
-            U.ShowDialog();
+            //UserTransactions U = new UserTransactions();
+           // U.ShowDialog();
         }
 
         private void buttonGotoBills_Click(object sender, EventArgs e)

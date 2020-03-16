@@ -13,7 +13,7 @@ namespace BudgeIt
 {
     public partial class Transactions : Form
     {
-        public SqlConnection sqlConnection;
+        public SqlConnection sqlConnection = new SqlConnection();
 
         public Transactions()
         {
