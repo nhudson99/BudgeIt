@@ -101,6 +101,11 @@ namespace BudgeIt
             frm.ShowDialog();
         }
 
+        private void UserRegistration2_Load(object sender, EventArgs e)
+        {
+
+        }
+
         /*private void btnSubmit_Click_1(object sender, EventArgs e)
         {
 

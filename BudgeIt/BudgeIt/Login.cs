@@ -31,13 +31,21 @@ namespace BudgeIt
 
 
             SqlDataReader reader = cmdCheckLogin.ExecuteReader();
-
-            if (reader.Read())
+            try
             {
-                MessageBox.Show("Worked");
-                Calendar form = new Calendar();
-                form.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
-                form.Show();
+                if (reader.Read())
+                {
+                    MessageBox.Show("Worked");
+                    Calendar form = new Calendar();
+                    form.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
+                    form.Show();
+                }
+                else
+                    throw new Exception("Invalid Login Attempt");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             reader.Close();
     
@@ -72,8 +80,8 @@ namespace BudgeIt
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            //UserRegistration2 frm = new UserRegistration2();
-            //frm.ShowDialog();
+            UserRegistration2 frm = new UserRegistration2();
+            frm.ShowDialog();
         }
     }
 }
