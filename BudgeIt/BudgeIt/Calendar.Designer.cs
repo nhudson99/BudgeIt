@@ -37,6 +37,7 @@
             this.btnWithdraw = new System.Windows.Forms.Button();
             this.btnBills = new System.Windows.Forms.Button();
             this.CalendarTable = new System.Windows.Forms.TableLayoutPanel();
+            this.btnTrans = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -120,6 +121,7 @@
             this.btnBills.TabIndex = 10;
             this.btnBills.Text = "Bills";
             this.btnBills.UseVisualStyleBackColor = true;
+            this.btnBills.Click += new System.EventHandler(this.btnBills_Click);
             // 
             // CalendarTable
             // 
@@ -145,11 +147,23 @@
             this.CalendarTable.Size = new System.Drawing.Size(321, 240);
             this.CalendarTable.TabIndex = 11;
             // 
+            // btnTrans
+            // 
+            this.btnTrans.Location = new System.Drawing.Point(544, 389);
+            this.btnTrans.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTrans.Name = "btnTrans";
+            this.btnTrans.Size = new System.Drawing.Size(106, 58);
+            this.btnTrans.TabIndex = 12;
+            this.btnTrans.Text = "Transaction History";
+            this.btnTrans.UseVisualStyleBackColor = true;
+            this.btnTrans.Click += new System.EventHandler(this.btnTrans_Click);
+            // 
             // Calendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 522);
+            this.Controls.Add(this.btnTrans);
             this.Controls.Add(this.CalendarTable);
             this.Controls.Add(this.btnBills);
             this.Controls.Add(this.btnWithdraw);
@@ -179,6 +193,7 @@
         private System.Windows.Forms.Button btnWithdraw;
         private System.Windows.Forms.Button btnBills;
         private System.Windows.Forms.TableLayoutPanel CalendarTable;
+        private System.Windows.Forms.Button btnTrans;
     }
 }
 

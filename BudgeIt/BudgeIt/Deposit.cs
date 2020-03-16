@@ -114,7 +114,7 @@ namespace BudgeIt
                     return;
                 }
 
-                // Get transaction amount
+                // Get transaction IDCount
                 int IDcount = 0;
                 SqlCommand cmdGet = sqlConnection1.CreateCommand();
                 cmdGet.CommandText = "SELECT Count(*) FROM TRANSACTIONS";
@@ -179,8 +179,8 @@ namespace BudgeIt
         {
             // Making connection link to connect ( Deposit ) with ( Bills ) ------------------------------ MAJED
 
-            Bills B = new Bills();
-            B.ShowDialog();
+            //Bills B = new Bills();
+            //B.ShowDialog();
         }
     }
 }
