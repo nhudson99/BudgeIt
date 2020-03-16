@@ -163,8 +163,8 @@ namespace BudgeIt
         {
             // Making connection link to connect ( Deposit ) with ( Withdraw ) ------------------------------ MAJED
 
-            Withdraw W = new Withdraw();
-            W.ShowDialog();
+            //Withdraw W = new Withdraw();
+            //W.ShowDialog();
         }
 
         private void buttonAllTransaction_Click(object sender, EventArgs e)
