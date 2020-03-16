@@ -32,7 +32,7 @@ namespace BudgeIt
 
                 //connection 
                 
-                sqlCon.Open();
+                //sqlCon.Open();
                 SqlCommand cmdGet = sqlCon.CreateCommand();
                 cmdGet.CommandText = "SELECT Count(*) FROM Users";
                 SqlDataReader reader = cmdGet.ExecuteReader();
@@ -61,7 +61,12 @@ namespace BudgeIt
 
         private void ClearTextBoxes()
         {
+            firstName.Text = lastName.Text = username.Text = password.Text = "";
+        }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
