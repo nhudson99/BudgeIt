@@ -13,7 +13,7 @@ namespace BudgeIt
 {
     public partial class Withdraw : Form
     {
-        public SqlConnection sqlConnection1 = new SqlConnection();
+        public SqlConnection sqlConnection1;
 
         public Withdraw()
         {
@@ -73,7 +73,6 @@ namespace BudgeIt
 
             reader.Close();
         }
-
         // To clear parameters because if we need to make another operation -------------------------- MAJED
 
         void ClearControls()
@@ -104,6 +103,7 @@ namespace BudgeIt
             DateTime Date = DateTime.Now;
             decimal Amt = decimal.Parse(textBoxWithdrawAmount.Text);
             int UserId = int.Parse(comboBoxWithdrawUserID.Text);
+            string Notes = (textBoxDescription.Text);
 
             decimal CurrentBalance = decimal.Parse(textBoxWithdrawCurrentBalance.Text);
 
@@ -114,17 +114,31 @@ namespace BudgeIt
                 return;
             }
 
+            // Get transaction IDCount
+            int IDcount = 0;
+            SqlCommand cmdGet = sqlConnection1.CreateCommand();
+            cmdGet.CommandText = "SELECT Count(*) FROM TRANSACTIONS";
+            SqlDataReader reader = cmdGet.ExecuteReader();
+            if (reader.Read())
+            {
+                //MessageBox.Show(reader[0].ToString());
+                IDcount = (int)(reader[0]);
+                reader.Close();
+
+            }
+
             // sending a Withdraw value to the ( Stored Procedure ) to apply it on the database --------- MAJED
 
             SqlCommand cmdNewWithdraw = sqlConnection1.CreateCommand();
             cmdNewWithdraw.CommandText = "NewTransaction";
             cmdNewWithdraw.CommandType = CommandType.StoredProcedure;
 
+            cmdNewWithdraw.Parameters.AddWithValue("@tID", IDcount + 1);
             cmdNewWithdraw.Parameters.AddWithValue("@Type", Type);
             cmdNewWithdraw.Parameters.AddWithValue("@Date", Date);
             cmdNewWithdraw.Parameters.AddWithValue("@Amt", Amt);
             cmdNewWithdraw.Parameters.AddWithValue("@UserId", UserId);
-
+            
             cmdNewWithdraw.ExecuteNonQuery();
 
             MessageBox.Show("The amount has been Withdrawn");
@@ -138,8 +152,24 @@ namespace BudgeIt
 
 
             textBoxWithdrawAmount.Text = "0.0";
+
+            textBoxDescription.Clear();
         }
 
+        private void buttonGoToDeposit_Click(object sender, EventArgs e)
+        {
+            // Making connection link to connect ( Withdraw ) with ( Deposit ) ------------------------------ MAJED
 
+            Deposit D = new Deposit();
+            D.ShowDialog();
+        }
+
+        private void buttonAllTransaction_Click(object sender, EventArgs e)
+        {
+            // Making connection link to connect ( Withdraw ) with ( Transactions ) ------------------------------ MAJED
+
+            UserTransactions U = new UserTransactions();
+            U.ShowDialog();
+        }
     }
 }

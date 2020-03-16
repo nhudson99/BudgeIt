@@ -89,6 +89,23 @@ namespace BudgeIt
 
         }
 
+        private void password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Login frm = new Login();
+            frm.ShowDialog();
+        }
+
+        private void UserRegistration2_Load(object sender, EventArgs e)
+        {
+
+        }
+
         /*private void btnSubmit_Click_1(object sender, EventArgs e)
         {
 
