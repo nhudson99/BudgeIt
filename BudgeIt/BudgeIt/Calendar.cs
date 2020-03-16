@@ -36,5 +36,11 @@ namespace BudgeIt
         {
 
         }
+
+        private void btnWithdraw_Click(object sender, EventArgs e)
+        {
+            //Withdraw with = new Withdraw();
+            //with.ShowDialog();
+        }
     }
 }
