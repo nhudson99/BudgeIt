@@ -45,12 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bills.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Bills.Designer.cs">
-      <DependentUpon>Bills.cs</DependentUpon>
-    </Compile>
     <Compile Include="Calendar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,12 +76,6 @@
     </Compile>
     <Compile Include="UserTransactions.Designer.cs">
       <DependentUpon>UserTransactions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Withdraw.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Withdraw.Designer.cs">
-      <DependentUpon>Withdraw.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Calendar.resx">
       <DependentUpon>Calendar.cs</DependentUpon>
