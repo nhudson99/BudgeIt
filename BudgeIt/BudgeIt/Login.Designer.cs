@@ -42,16 +42,16 @@
             this.txtUserName.Location = new System.Drawing.Point(314, 230);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(2);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(368, 26);
+            this.txtUserName.Size = new System.Drawing.Size(287, 26);
             this.txtUserName.TabIndex = 0;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(325, 353);
+            this.txtPassword.Location = new System.Drawing.Point(314, 306);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(349, 26);
+            this.txtPassword.Size = new System.Drawing.Size(287, 26);
             this.txtPassword.TabIndex = 1;
             // 
             // lbLogin
@@ -66,10 +66,10 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(401, 415);
+            this.btnLogin.Location = new System.Drawing.Point(359, 365);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(116, 40);
+            this.btnLogin.Size = new System.Drawing.Size(168, 91);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -88,7 +88,7 @@
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(225, 358);
+            this.lbPassword.Location = new System.Drawing.Point(225, 312);
             this.lbPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(78, 20);
@@ -97,12 +97,13 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(796, 12);
+            this.btnRegister.BackColor = System.Drawing.SystemColors.Control;
+            this.btnRegister.Location = new System.Drawing.Point(770, 12);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(152, 63);
+            this.btnRegister.Size = new System.Drawing.Size(168, 91);
             this.btnRegister.TabIndex = 6;
             this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // Login
