@@ -49,11 +49,11 @@ namespace BudgeIt
             {
                 /* Connection strings servers 
                  * USE YOURS
-                 * Data Source=DESKTOP-GJ2VEDA\\MSSQLSERVER02; - 
+                 * Data Source=DESKTOP-GJ2VEDA\\MSSQLSERVER02; - NILES
                  * Data Source=NATE-SURFACE; - Nate
                  * */
                 sqlConnection.ConnectionString =
-                        "Data Source=DESKTOP-L3400E3;" +
+                       "Data Source=DESKTOP-GJ2VEDA\\MSSQLSERVER02;" +
                         "Initial Catalog=BudgeIt;" +
                         "Integrated Security=True";
                 sqlConnection.Open();
@@ -71,8 +71,8 @@ namespace BudgeIt
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            //UserRegistration2 frm = new UserRegistration2();
-            //frm.ShowDialog();
+            UserRegistration2 frm = new UserRegistration2();
+            frm.ShowDialog();
         }
     }
 }
