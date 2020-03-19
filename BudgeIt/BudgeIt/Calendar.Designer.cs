@@ -36,8 +36,11 @@
             this.btnDeposit = new System.Windows.Forms.Button();
             this.btnWithdraw = new System.Windows.Forms.Button();
             this.btnBills = new System.Windows.Forms.Button();
-            this.CalendarTable = new System.Windows.Forms.TableLayoutPanel();
-            this.btnTrans = new System.Windows.Forms.Button();
+            this.Expenses = new System.Windows.Forms.TextBox();
+            this.Disposable = new System.Windows.Forms.TextBox();
+            this.Income = new System.Windows.Forms.TextBox();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.LBLName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -123,29 +126,41 @@
             this.btnBills.UseVisualStyleBackColor = true;
             this.btnBills.Click += new System.EventHandler(this.btnBills_Click);
             // 
-            // CalendarTable
+            // Expenses
             // 
-            this.CalendarTable.ColumnCount = 7;
-            this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.04504F));
-            this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.95496F));
-            this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 46F));
-            this.CalendarTable.Location = new System.Drawing.Point(212, 145);
-            this.CalendarTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.CalendarTable.Name = "CalendarTable";
-            this.CalendarTable.RowCount = 7;
-            this.CalendarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.84211F));
-            this.CalendarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.15789F));
-            this.CalendarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.CalendarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.CalendarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.CalendarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.CalendarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.CalendarTable.Size = new System.Drawing.Size(321, 240);
-            this.CalendarTable.TabIndex = 11;
+            this.Expenses.Location = new System.Drawing.Point(373, 38);
+            this.Expenses.Name = "Expenses";
+            this.Expenses.Size = new System.Drawing.Size(100, 22);
+            this.Expenses.TabIndex = 12;
+            // 
+            // Disposable
+            // 
+            this.Disposable.Location = new System.Drawing.Point(373, 77);
+            this.Disposable.Name = "Disposable";
+            this.Disposable.Size = new System.Drawing.Size(100, 22);
+            this.Disposable.TabIndex = 13;
+            // 
+            // Income
+            // 
+            this.Income.Location = new System.Drawing.Point(373, 127);
+            this.Income.Name = "Income";
+            this.Income.Size = new System.Drawing.Size(100, 22);
+            this.Income.TabIndex = 14;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(373, 194);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 16;
+            // 
+            // LBLName
+            // 
+            this.LBLName.AutoSize = true;
+            this.LBLName.Location = new System.Drawing.Point(100, 13);
+            this.LBLName.Name = "LBLName";
+            this.LBLName.Size = new System.Drawing.Size(46, 17);
+            this.LBLName.TabIndex = 17;
+            this.LBLName.Text = "label5";
             // 
             // btnTrans
             // 
@@ -162,9 +177,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 522);
-            this.Controls.Add(this.btnTrans);
-            this.Controls.Add(this.CalendarTable);
+            this.ClientSize = new System.Drawing.Size(1098, 642);
+            this.Controls.Add(this.LBLName);
+            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.Income);
+            this.Controls.Add(this.Disposable);
+            this.Controls.Add(this.Expenses);
             this.Controls.Add(this.btnBills);
             this.Controls.Add(this.btnWithdraw);
             this.Controls.Add(this.btnDeposit);
@@ -192,8 +210,11 @@
         private System.Windows.Forms.Button btnDeposit;
         private System.Windows.Forms.Button btnWithdraw;
         private System.Windows.Forms.Button btnBills;
-        private System.Windows.Forms.TableLayoutPanel CalendarTable;
-        private System.Windows.Forms.Button btnTrans;
+        private System.Windows.Forms.TextBox Expenses;
+        private System.Windows.Forms.TextBox Disposable;
+        private System.Windows.Forms.TextBox Income;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Label LBLName;
     }
 }
 
