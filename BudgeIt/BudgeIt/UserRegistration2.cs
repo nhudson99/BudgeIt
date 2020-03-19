@@ -61,7 +61,7 @@ namespace BudgeIt
 
         private void ClearTextBoxes()
         {
-            firstName.Text = lastName.Text = username.Text = password.Text = "";
+            firstName.Text = lastName.Text = username.Text = password.Text = balance.Text = "";
         }
 
         private void btnBack_Click(object sender, EventArgs e)

@@ -61,13 +61,6 @@ namespace BudgeIt
             bill.ShowDialog();
         }
 
-        private void btnTrans_Click(object sender, EventArgs e)
-        {
-            Transactions t = new Transactions();
-            t.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
-            t.ShowDialog();
-        }
-
         private void CalendarTable_Paint(object sender, PaintEventArgs e)
         {
             
@@ -119,6 +112,13 @@ namespace BudgeIt
             SqlDataReader da4 = cmd4.ExecuteReader();
 
             con4.Close();
+        }
+
+        private void btnTrans_Click_1(object sender, EventArgs e)
+        {
+            Transactions t = new Transactions();
+            t.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
+            t.ShowDialog();
         }
     }
 }

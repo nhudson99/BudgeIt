@@ -41,6 +41,7 @@
             this.Income = new System.Windows.Forms.TextBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.LBLName = new System.Windows.Forms.Label();
+            this.btnTrans = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -86,7 +87,7 @@
             // btnAudit
             // 
             this.btnAudit.Location = new System.Drawing.Point(478, 65);
-            this.btnAudit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAudit.Margin = new System.Windows.Forms.Padding(2);
             this.btnAudit.Name = "btnAudit";
             this.btnAudit.Size = new System.Drawing.Size(56, 19);
             this.btnAudit.TabIndex = 7;
@@ -96,7 +97,7 @@
             // btnDeposit
             // 
             this.btnDeposit.Location = new System.Drawing.Point(212, 389);
-            this.btnDeposit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeposit.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeposit.Name = "btnDeposit";
             this.btnDeposit.Size = new System.Drawing.Size(106, 58);
             this.btnDeposit.TabIndex = 8;
@@ -107,7 +108,7 @@
             // btnWithdraw
             // 
             this.btnWithdraw.Location = new System.Drawing.Point(323, 389);
-            this.btnWithdraw.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnWithdraw.Margin = new System.Windows.Forms.Padding(2);
             this.btnWithdraw.Name = "btnWithdraw";
             this.btnWithdraw.Size = new System.Drawing.Size(106, 58);
             this.btnWithdraw.TabIndex = 9;
@@ -118,7 +119,7 @@
             // btnBills
             // 
             this.btnBills.Location = new System.Drawing.Point(434, 389);
-            this.btnBills.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBills.Margin = new System.Windows.Forms.Padding(2);
             this.btnBills.Name = "btnBills";
             this.btnBills.Size = new System.Drawing.Size(106, 58);
             this.btnBills.TabIndex = 10;
@@ -130,21 +131,21 @@
             // 
             this.Expenses.Location = new System.Drawing.Point(373, 38);
             this.Expenses.Name = "Expenses";
-            this.Expenses.Size = new System.Drawing.Size(100, 22);
+            this.Expenses.Size = new System.Drawing.Size(100, 20);
             this.Expenses.TabIndex = 12;
             // 
             // Disposable
             // 
             this.Disposable.Location = new System.Drawing.Point(373, 77);
             this.Disposable.Name = "Disposable";
-            this.Disposable.Size = new System.Drawing.Size(100, 22);
+            this.Disposable.Size = new System.Drawing.Size(100, 20);
             this.Disposable.TabIndex = 13;
             // 
             // Income
             // 
             this.Income.Location = new System.Drawing.Point(373, 127);
             this.Income.Name = "Income";
-            this.Income.Size = new System.Drawing.Size(100, 22);
+            this.Income.Size = new System.Drawing.Size(100, 20);
             this.Income.TabIndex = 14;
             // 
             // monthCalendar1
@@ -158,7 +159,7 @@
             this.LBLName.AutoSize = true;
             this.LBLName.Location = new System.Drawing.Point(100, 13);
             this.LBLName.Name = "LBLName";
-            this.LBLName.Size = new System.Drawing.Size(46, 17);
+            this.LBLName.Size = new System.Drawing.Size(35, 13);
             this.LBLName.TabIndex = 17;
             this.LBLName.Text = "label5";
             // 
@@ -168,16 +169,17 @@
             this.btnTrans.Margin = new System.Windows.Forms.Padding(2);
             this.btnTrans.Name = "btnTrans";
             this.btnTrans.Size = new System.Drawing.Size(106, 58);
-            this.btnTrans.TabIndex = 12;
+            this.btnTrans.TabIndex = 18;
             this.btnTrans.Text = "Transaction History";
             this.btnTrans.UseVisualStyleBackColor = true;
-            this.btnTrans.Click += new System.EventHandler(this.btnTrans_Click);
+            this.btnTrans.Click += new System.EventHandler(this.btnTrans_Click_1);
             // 
             // Calendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1098, 642);
+            this.Controls.Add(this.btnTrans);
             this.Controls.Add(this.LBLName);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.Income);
@@ -215,6 +217,7 @@
         private System.Windows.Forms.TextBox Income;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label LBLName;
+        private System.Windows.Forms.Button btnTrans;
     }
 }
 
