@@ -13,11 +13,29 @@ namespace BudgeIt
 {
     public partial class Withdraw : Form
     {
-        public SqlConnection sqlConnection1 = new SqlConnection();
+        public SqlConnection sqlConnection = new SqlConnection();
 
         public Withdraw()
         {
             InitializeComponent();
+        }
+
+        private void comboBoxWithdrawUserID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // To load the amount from the DB ---------------------------------------------------------- MAJED
+
+            SqlCommand cmdCurrentBalance = sqlConnection.CreateCommand();
+            cmdCurrentBalance.CommandText = "Select Bal from Users where UserId =@bal";
+            cmdCurrentBalance.Parameters.AddWithValue("@bal", decimal.Parse(comboBoxWithdrawUserID.Text));
+            SqlDataReader reader = cmdCurrentBalance.ExecuteReader();
+
+            if (reader.Read())
+            {
+                textBoxWithdrawCurrentBalance.Text = reader[0].ToString();
+                textBoxWithdrawNewBalance.Text = "0.0";
+            }
+
+            reader.Close();
         }
 
         private void Withdraw_Load(object sender, EventArgs e)
@@ -34,7 +52,7 @@ namespace BudgeIt
             // Opening connection and check it ---------------------------------------------------------- MAJED
             try
             {
-                sqlConnection1.Open();
+                sqlConnection.Open();
                 MessageBox.Show("Welcome to the Withdraw Box");
             }
             catch (Exception ex)
@@ -44,31 +62,13 @@ namespace BudgeIt
 
             // to load all the user ID ------------------------------------------------------------------ MAJED
 
-            SqlCommand cmdLoad = sqlConnection1.CreateCommand();
+            SqlCommand cmdLoad = sqlConnection.CreateCommand();
             cmdLoad.CommandText = "Select UserId from Users";
             SqlDataReader reader = cmdLoad.ExecuteReader();
 
             while (reader.Read())
             {
                 comboBoxWithdrawUserID.Items.Add(reader[0].ToString());
-            }
-
-            reader.Close();
-        }
-
-        private void comboBoxWithdrawUserID_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // To load the amount from the DB ---------------------------------------------------------- MAJED
-
-            SqlCommand cmdCurrentBalance = sqlConnection1.CreateCommand();
-            cmdCurrentBalance.CommandText = "Select Bal from Users where UserId =@bal";
-            cmdCurrentBalance.Parameters.AddWithValue("@bal", decimal.Parse(comboBoxWithdrawUserID.Text));
-            SqlDataReader reader = cmdCurrentBalance.ExecuteReader();
-
-            if (reader.Read())
-            {
-                textBoxWithdrawCurrentBalance.Text = reader[0].ToString();
-                textBoxWithdrawNewBalance.Text = "0.0";
             }
 
             reader.Close();
@@ -93,7 +93,7 @@ namespace BudgeIt
 
         }
 
-        private void buttonWithdrawDelete_Click(object sender, EventArgs e)
+        private void buttonWithdrawDelete_Click_1(object sender, EventArgs e)
         {
             ClearControls();
         }
@@ -104,6 +104,7 @@ namespace BudgeIt
             DateTime Date = DateTime.Now;
             decimal Amt = decimal.Parse(textBoxWithdrawAmount.Text);
             int UserId = int.Parse(comboBoxWithdrawUserID.Text);
+            string Notes = (textBoxDescription.Text);
 
             decimal CurrentBalance = decimal.Parse(textBoxWithdrawCurrentBalance.Text);
 
@@ -114,12 +115,26 @@ namespace BudgeIt
                 return;
             }
 
+            // Get transaction IDCount
+            int IDcount = 0;
+            SqlCommand cmdGet = sqlConnection.CreateCommand();
+            cmdGet.CommandText = "SELECT Count(*) FROM TRANSACTIONS";
+            SqlDataReader reader = cmdGet.ExecuteReader();
+            if (reader.Read())
+            {
+                //MessageBox.Show(reader[0].ToString());
+                IDcount = (int)(reader[0]);
+                reader.Close();
+
+            }
+
             // sending a Withdraw value to the ( Stored Procedure ) to apply it on the database --------- MAJED
 
-            SqlCommand cmdNewWithdraw = sqlConnection1.CreateCommand();
+            SqlCommand cmdNewWithdraw = sqlConnection.CreateCommand();
             cmdNewWithdraw.CommandText = "NewTransaction";
             cmdNewWithdraw.CommandType = CommandType.StoredProcedure;
 
+            cmdNewWithdraw.Parameters.AddWithValue("@tID", IDcount + 1);
             cmdNewWithdraw.Parameters.AddWithValue("@Type", Type);
             cmdNewWithdraw.Parameters.AddWithValue("@Date", Date);
             cmdNewWithdraw.Parameters.AddWithValue("@Amt", Amt);
@@ -138,8 +153,8 @@ namespace BudgeIt
 
 
             textBoxWithdrawAmount.Text = "0.0";
+
+            textBoxDescription.Clear();
         }
-
-
     }
 }

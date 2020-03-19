@@ -99,42 +99,63 @@ namespace BudgeIt
 
         private void buttonDepositDeposit_Click(object sender, EventArgs e)
         {
-            String Type = "Deposit";
-            DateTime Date = DateTime.Now;
-            decimal Amt = decimal.Parse(textBoxDepositAmount.Text);
-            int UserId = int.Parse(comboBoxDepositUserID.Text);
-
-            decimal CurrentBalance = decimal.Parse(textBoxDepositCurrentBalance.Text);
-
-            if (Amt <= 0)
+            try
             {
-                MessageBox.Show("Amount must be > 0", "Deposit");
-                return;
+                String Type = "Deposit";
+                DateTime Date = DateTime.Now;
+                decimal Amt = decimal.Parse(textBoxDepositAmount.Text);
+                int UserId = int.Parse(comboBoxDepositUserID.Text);
+
+                decimal CurrentBalance = decimal.Parse(textBoxDepositCurrentBalance.Text);
+
+                if (Amt <= 0)
+                {
+                    MessageBox.Show("Amount must be > 0", "Deposit");
+                    return;
+                }
+
+                // Get transaction IDCount
+                int IDcount = 0;
+                SqlCommand cmdGet = sqlConnection1.CreateCommand();
+                cmdGet.CommandText = "SELECT Count(*) FROM TRANSACTIONS";
+                SqlDataReader reader = cmdGet.ExecuteReader();
+                if (reader.Read())
+                {
+                    //MessageBox.Show(reader[0].ToString());
+                    IDcount = (int)(reader[0]);
+                    reader.Close();
+
+                }
+
+                // sending a deposit value to the ( Stored Procedure ) to apply it on the database --------- MAJED
+
+                SqlCommand cmdNewDeposit = sqlConnection1.CreateCommand();
+                cmdNewDeposit.CommandText = "NewTransaction";
+                cmdNewDeposit.CommandType = CommandType.StoredProcedure;
+
+                cmdNewDeposit.Parameters.AddWithValue("@tID", IDcount + 1);
+                cmdNewDeposit.Parameters.AddWithValue("@Type", Type);
+                cmdNewDeposit.Parameters.AddWithValue("@Date", Date);
+                cmdNewDeposit.Parameters.AddWithValue("@Amt", Amt);
+                cmdNewDeposit.Parameters.AddWithValue("@UserId", UserId);
+
+                cmdNewDeposit.ExecuteNonQuery();
+
+                MessageBox.Show("The amount has been deposited");
+
+                //Clear your parameters to make another operation if you want ------------------------------ MAJED
+                cmdNewDeposit.Parameters.Clear();
+
+                textBoxDepositNewBalance.Text = (CurrentBalance + Amt).ToString();
+
+                textBoxDepositCurrentBalance.Text = textBoxDepositNewBalance.Text;
+
+                textBoxDepositAmount.Text = "0.0";
             }
-
-            // sending a deposit value to the ( Stored Procedure ) to apply it on the database --------- MAJED
-
-            SqlCommand cmdNewDeposit = sqlConnection1.CreateCommand();
-            cmdNewDeposit.CommandText = "NewTransaction";
-            cmdNewDeposit.CommandType = CommandType.StoredProcedure;
-
-            cmdNewDeposit.Parameters.AddWithValue("@Type", Type);
-            cmdNewDeposit.Parameters.AddWithValue("@Date", Date);
-            cmdNewDeposit.Parameters.AddWithValue("@Amt", Amt);
-            cmdNewDeposit.Parameters.AddWithValue("@UserId", UserId);
-
-            cmdNewDeposit.ExecuteNonQuery();
-
-            MessageBox.Show("The amount has been deposited");
-
-            //Clear your parameters to make another operation if you want ------------------------------ MAJED
-            cmdNewDeposit.Parameters.Clear();
-
-            textBoxDepositNewBalance.Text = (CurrentBalance + Amt).ToString();
-
-            textBoxDepositCurrentBalance.Text = textBoxDepositNewBalance.Text;
-
-            textBoxDepositAmount.Text = "0.0";
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -142,24 +163,24 @@ namespace BudgeIt
         {
             // Making connection link to connect ( Deposit ) with ( Withdraw ) ------------------------------ MAJED
 
-            Withdraw W = new Withdraw();
-            W.ShowDialog();
+            //Withdraw W = new Withdraw();
+            //W.ShowDialog();
         }
 
         private void buttonAllTransaction_Click(object sender, EventArgs e)
         {
             // Making connection link to connect ( Deposit ) with ( Transactions ) ------------------------------ MAJED
 
-            UserTransactions U = new UserTransactions();
-            U.ShowDialog();
+            //UserTransactions U = new UserTransactions();
+           // U.ShowDialog();
         }
 
         private void buttonGotoBills_Click(object sender, EventArgs e)
         {
             // Making connection link to connect ( Deposit ) with ( Bills ) ------------------------------ MAJED
 
-            Bills B = new Bills();
-            B.ShowDialog();
+            //Bills B = new Bills();
+            //B.ShowDialog();
         }
     }
 }

@@ -2,35 +2,25 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace BudgeIt
 {
     public partial class UserRegistration2 : Form
     {
+        public SqlConnection sqlCon;
+
         public UserRegistration2()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void btnSubmit_Click_1(object sender, EventArgs e)
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
             int IDcount = 0;
 
@@ -41,13 +31,8 @@ namespace BudgeIt
             {
 
                 //connection 
-                SqlConnection sqlCon = new SqlConnection(); //enter propertie of DB here
-
-                sqlCon.ConnectionString =
-                                "Data Source=DESKTOP-GJ2VEDA\\MSSQLSERVER02;" +
-                                "Initial Catalog=BudgeIt;" +
-                                "Integrated Security=True";
-                sqlCon.Open();
+                
+                //sqlCon.Open();
                 SqlCommand cmdGet = sqlCon.CreateCommand();
                 cmdGet.CommandText = "SELECT Count(*) FROM Users";
                 SqlDataReader reader = cmdGet.ExecuteReader();
@@ -57,7 +42,7 @@ namespace BudgeIt
                     IDcount = (int)(reader[0]);
                     reader.Close();
 
-                } 
+                }
                 SqlCommand sqlCmd = new SqlCommand("UserAdd", sqlCon);
                 sqlCmd.CommandType = CommandType.StoredProcedure;
                 sqlCmd.Parameters.AddWithValue("@uid", IDcount + 1);
@@ -66,7 +51,7 @@ namespace BudgeIt
                 sqlCmd.Parameters.AddWithValue("@userName", username.Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@password", password.Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@bal", balance.Text.Trim());
-                
+
                 sqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Register is confimred");
                 ClearTextBoxes();
@@ -74,24 +59,14 @@ namespace BudgeIt
 
         }
 
-        void ClearTextBoxes()
+        private void ClearTextBoxes()
         {
             firstName.Text = lastName.Text = username.Text = password.Text = "";
         }
 
-        private void firstName_TextChanged(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
-
-        private void username_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        /*private void btnSubmit_Click_1(object sender, EventArgs e)
-        {
-
-        }*/
     }
 }

@@ -49,17 +49,23 @@ namespace BudgeIt
 
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
-            Withdraw withd = new Withdraw();
-            
+            Withdraw with = new Withdraw();
+            with.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
+            with.ShowDialog();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void btnBills_Click(object sender, EventArgs e)
         {
-            //Word.Cell cell = this.table[1].Cell(1, 1);
+            Bills bill = new Bills();
+            bill.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
+            bill.ShowDialog();
+        }
 
-            //cell.Range.Text = "Mon";
-            //cell.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphRight;
-            
+        private void btnTrans_Click(object sender, EventArgs e)
+        {
+            Transactions t = new Transactions();
+            t.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
+            t.ShowDialog();
         }
 
         private void CalendarTable_Paint(object sender, PaintEventArgs e)
