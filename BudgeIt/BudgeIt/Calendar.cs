@@ -52,7 +52,28 @@ namespace BudgeIt
                         Expenses.Text = "0";
                     }
                 }
-                
+                reader.Close();
+
+                SqlCommand cmdGetIncome = sqlConnection.CreateCommand();
+                cmdGetIncome.CommandText = "SELECT Bal FROM USERS WHERE UserId = @uID";
+                cmdGetIncome.Parameters.AddWithValue("@uID", userID);
+
+                reader = cmdGetIncome.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    //MessageBox.Show(reader[0].ToString());
+                    if (reader[0] != DBNull.Value)
+                        Income.Text = reader[0].ToString();
+                    else
+                    {
+                        Income.Text = "0";
+                    }
+                }
+                reader.Close();
+
+                Disposable.Text = (float.Parse(Income.Text) - float.Parse(Expenses.Text)).ToString();
+
 
             }
             catch (Exception ex)

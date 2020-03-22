@@ -56,7 +56,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(420, 198);
+            this.label3.Location = new System.Drawing.Point(420, 171);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 25);
@@ -76,7 +76,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(420, 60);
+            this.label4.Location = new System.Drawing.Point(420, 79);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 25);
@@ -85,7 +85,7 @@
             // 
             // btnAudit
             // 
-            this.btnAudit.Location = new System.Drawing.Point(956, 125);
+            this.btnAudit.Location = new System.Drawing.Point(1015, 119);
             this.btnAudit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAudit.Name = "btnAudit";
             this.btnAudit.Size = new System.Drawing.Size(112, 37);
@@ -129,7 +129,7 @@
             // 
             // Expenses
             // 
-            this.Expenses.Location = new System.Drawing.Point(746, 73);
+            this.Expenses.Location = new System.Drawing.Point(746, 79);
             this.Expenses.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Expenses.Name = "Expenses";
             this.Expenses.Size = new System.Drawing.Size(196, 31);
@@ -138,19 +138,21 @@
             // 
             // Disposable
             // 
-            this.Disposable.Location = new System.Drawing.Point(746, 148);
+            this.Disposable.Location = new System.Drawing.Point(746, 122);
             this.Disposable.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Disposable.Name = "Disposable";
             this.Disposable.Size = new System.Drawing.Size(196, 31);
             this.Disposable.TabIndex = 13;
+            this.Disposable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Income
             // 
-            this.Income.Location = new System.Drawing.Point(746, 244);
+            this.Income.Location = new System.Drawing.Point(746, 165);
             this.Income.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Income.Name = "Income";
             this.Income.Size = new System.Drawing.Size(196, 31);
             this.Income.TabIndex = 14;
+            this.Income.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // monthCalendar1
             // 
