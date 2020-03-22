@@ -14,6 +14,8 @@ namespace BudgeIt
     public partial class Bills : Form
     {
         public SqlConnection sqlConnection = new SqlConnection();
+        public int userID;
+        public string Fname;
 
         public Bills()
         {
@@ -24,16 +26,18 @@ namespace BudgeIt
         {
             textBoxBillsCurrentBalance.Text = "0.0";
             textBoxBillsAmount.Text = "0.0";
-            textBoxBillsNewBalance.Text = "0.0";
+            //textBoxBillsNewBalance.Text = "0.0";
 
             textBoxBillsCurrentBalance.Enabled = false;
-            textBoxBillsNewBalance.Enabled = false;
+            //textBoxBillsNewBalance.Enabled = false;
+
+            lblName.Text = Fname;
 
             // Opening connection and check it ---------------------------------------------------------- Eliseo
             try
             {
                 sqlConnection.Open();
-                MessageBox.Show("Welcome to the Bills Box");
+                //MessageBox.Show("Welcome to the Bills Box");
             }
             catch (Exception ex)
             {
@@ -48,7 +52,7 @@ namespace BudgeIt
 
             while (reader.Read())
             {
-                comboBoxBillsUserID.Items.Add(reader[0].ToString());
+                //comboBoxBillsUserID.Items.Add(reader[0].ToString());
             }
 
             reader.Close();
@@ -61,13 +65,13 @@ namespace BudgeIt
 
             SqlCommand cmdCurrentBalance = sqlConnection.CreateCommand();
             cmdCurrentBalance.CommandText = "Select Bal from Users where UserId =@bal";
-            cmdCurrentBalance.Parameters.AddWithValue("@bal", decimal.Parse(comboBoxBillsUserID.Text));
+            cmdCurrentBalance.Parameters.AddWithValue("@bal", userID);
             SqlDataReader reader = cmdCurrentBalance.ExecuteReader();
 
             if (reader.Read())
             {
                 textBoxBillsCurrentBalance.Text = reader[0].ToString();
-                textBoxBillsNewBalance.Text = "0.0";
+                //textBoxBillsNewBalance.Text = "0.0";
             }
 
             reader.Close();
@@ -78,7 +82,6 @@ namespace BudgeIt
             String Type = "Bills";
             DateTime Date = DateTime.Now;
             decimal Amt = decimal.Parse(textBoxBillsAmount.Text);
-            int UserId = int.Parse(comboBoxBillsUserID.Text);
             string Notes = (textBoxDescription.Text);
 
             decimal CurrentBalance = decimal.Parse(textBoxBillsCurrentBalance.Text);
@@ -90,10 +93,10 @@ namespace BudgeIt
                 return;
             }
 
-            // Get transaction IDCount
+            // Get BILLS IDCount
             int IDcount = 0;
             SqlCommand cmdGet = sqlConnection.CreateCommand();
-            cmdGet.CommandText = "SELECT Count(*) FROM TRANSACTIONS";
+            cmdGet.CommandText = "SELECT Count(*) FROM BILLS";
             SqlDataReader reader = cmdGet.ExecuteReader();
             if (reader.Read())
             {
@@ -103,28 +106,30 @@ namespace BudgeIt
 
             }
 
-            // sending a Bill value to the ( Stored Procedure ) to apply it on the database --------- MAJED
+            Date = DTPBillDate.Value;
+
+            // sending a Bill value to the ( Stored Procedure ) to apply it on the database --------- NATE
 
             SqlCommand cmdNewBill = sqlConnection.CreateCommand();
-            cmdNewBill.CommandText = "NewTransaction";
-            cmdNewBill.CommandType = CommandType.StoredProcedure;
+            cmdNewBill.CommandText = "INSERT INTO BILLS(billId,name,amt,date,uId) VALUES(@tID,@Type,@Amt,@Date,@UserId)";
+            //cmdNewBill.CommandType = CommandType.StoredProcedure;
 
             cmdNewBill.Parameters.AddWithValue("@tID", IDcount + 1);
             cmdNewBill.Parameters.AddWithValue("@Type", Type);
             cmdNewBill.Parameters.AddWithValue("@Date", Date);
             cmdNewBill.Parameters.AddWithValue("@Amt", Amt);
-            cmdNewBill.Parameters.AddWithValue("@UserId", UserId);
+            cmdNewBill.Parameters.AddWithValue("@UserId", userID);
 
             cmdNewBill.ExecuteNonQuery();
 
-            MessageBox.Show("The Bill has been paid");
+            MessageBox.Show("The Bill has been scheduled");
 
             //Clear your parameters to make another operation if you want ------------------------------ Eliseo
             cmdNewBill.Parameters.Clear();
 
-            textBoxBillsNewBalance.Text = (CurrentBalance - Amt).ToString();
+            //textBoxBillsNewBalance.Text = (CurrentBalance - Amt).ToString();
 
-            textBoxBillsCurrentBalance.Text = textBoxBillsNewBalance.Text;
+            //textBoxBillsCurrentBalance.Text = textBoxBillsNewBalance.Text;
 
 
             textBoxBillsAmount.Text = "0.0";
@@ -135,7 +140,7 @@ namespace BudgeIt
         {
             textBoxBillsCurrentBalance.Text = "0.0";
             textBoxBillsAmount.Text = "0.0";
-            textBoxBillsNewBalance.Text = "0.0";
+            //textBoxBillsNewBalance.Text = "0.0";
         }
 
         private void buttonBillsDelete_Click(object sender, EventArgs e)
