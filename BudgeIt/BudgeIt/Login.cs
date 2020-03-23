@@ -14,6 +14,7 @@ namespace BudgeIt
     public partial class Login : Form
     {
         public SqlConnection sqlConnection = new SqlConnection();
+        //public int userID;
 
         public Login()
         {
@@ -25,7 +26,7 @@ namespace BudgeIt
 
             SqlCommand cmdCheckLogin = sqlConnection.CreateCommand();
 
-            cmdCheckLogin.CommandText = "SELECT userName, password FROM USERS WHERE userName = @uName AND  password = @pass";
+            cmdCheckLogin.CommandText = "SELECT userId FROM USERS WHERE userName = @uName AND  password = @pass";
             cmdCheckLogin.Parameters.AddWithValue("@uName", txtUserName.Text);
             cmdCheckLogin.Parameters.AddWithValue("@pass", txtPassword.Text);
 
@@ -35,9 +36,10 @@ namespace BudgeIt
             {
                 if (reader.Read())
                 {
-                    MessageBox.Show("Worked");
+                    //MessageBox.Show("Worked");
                     Calendar form = new Calendar();
                     form.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
+                    form.userID = int.Parse(reader[0].ToString());
                     form.Show();
                 }
                 else
@@ -62,7 +64,7 @@ namespace BudgeIt
                  * Data Source=DESKTOP-V7U3425; - Nate PC
                  * */
                 sqlConnection.ConnectionString =
-                        "Data Source=DESKTOP-V7U3425;" +
+                        "Data Source=NATE-SURFACE;" +
                         "Initial Catalog=BudgeIt;" +
                         "Integrated Security=True";
                 sqlConnection.Open();

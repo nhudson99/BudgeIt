@@ -7,6 +7,8 @@ namespace BudgeIt
     public partial class Calendar : Form
     {
         public SqlConnection sqlConnection = new SqlConnection();
+        public int userID;
+        public string Fname;
 
         public Calendar()
         {
@@ -21,18 +23,58 @@ namespace BudgeIt
                 SqlCommand cmdGetName = sqlConnection.CreateCommand();
 
                 cmdGetName.CommandText = "SELECT Fname FROM USERS WHERE userId = @uID";
-                cmdGetName.Parameters.AddWithValue("@uID", 1);
+                cmdGetName.Parameters.AddWithValue("@uID", userID);
 
 
                 SqlDataReader reader = cmdGetName.ExecuteReader();
 
                 if (reader.Read())
                 {
-                    MessageBox.Show("Worked");
+                    //MessageBox.Show("Worked");
                     LBLName.Text = reader[0].ToString();
-
+                    Fname = reader[0].ToString();
                 }
                 reader.Close();
+
+                SqlCommand cmdGetExpenses = sqlConnection.CreateCommand();
+                cmdGetExpenses.CommandText = "SELECT SUM(amt) FROM BILLS WHERE uId = @uID";
+                cmdGetExpenses.Parameters.AddWithValue("@uID", userID);
+
+                reader = cmdGetExpenses.ExecuteReader();
+
+                if(reader.Read())
+                {
+                    //MessageBox.Show(reader[0].ToString());
+                    if(reader[0] != DBNull.Value)
+                        Expenses.Text = reader[0].ToString();
+                    else
+                    {
+                        Expenses.Text = "0";
+                    }
+                }
+                reader.Close();
+
+                SqlCommand cmdGetIncome = sqlConnection.CreateCommand();
+                cmdGetIncome.CommandText = "SELECT Bal FROM USERS WHERE UserId = @uID";
+                cmdGetIncome.Parameters.AddWithValue("@uID", userID);
+
+                reader = cmdGetIncome.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    //MessageBox.Show(reader[0].ToString());
+                    if (reader[0] != DBNull.Value)
+                        Income.Text = reader[0].ToString();
+                    else
+                    {
+                        Income.Text = "0";
+                    }
+                }
+                reader.Close();
+
+                Disposable.Text = (float.Parse(Income.Text) - float.Parse(Expenses.Text)).ToString();
+
+
             }
             catch (Exception ex)
             {
@@ -58,6 +100,8 @@ namespace BudgeIt
         {
             Bills bill = new Bills();
             bill.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
+            bill.Fname = Fname;
+            bill.userID = userID;
             bill.ShowDialog();
         }
 
@@ -115,6 +159,13 @@ namespace BudgeIt
         }
 
         private void btnTrans_Click_1(object sender, EventArgs e)
+        {
+            Transactions t = new Transactions();
+            t.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
+            t.ShowDialog();
+        }
+
+        private void btnAudit_Click(object sender, EventArgs e)
         {
             Transactions t = new Transactions();
             t.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
