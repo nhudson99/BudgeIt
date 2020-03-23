@@ -46,5 +46,15 @@ namespace BudgeIt
             //cell.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphRight;
             
         }
+
+        private void btnAudit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CalendarTable_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

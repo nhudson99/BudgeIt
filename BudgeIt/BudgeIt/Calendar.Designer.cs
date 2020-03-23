@@ -42,54 +42,57 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 13);
+            this.label1.Location = new System.Drawing.Point(22, 16);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 17);
+            this.label1.Size = new System.Drawing.Size(83, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome, ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(280, 127);
+            this.label3.Location = new System.Drawing.Point(315, 159);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 17);
+            this.label3.Size = new System.Drawing.Size(62, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Income";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(280, 80);
+            this.label2.Location = new System.Drawing.Point(315, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 17);
+            this.label2.Size = new System.Drawing.Size(88, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Disposable";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(280, 38);
+            this.label4.Location = new System.Drawing.Point(315, 48);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 17);
+            this.label4.Size = new System.Drawing.Size(79, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Expenses";
             // 
             // btnAudit
             // 
-            this.btnAudit.Location = new System.Drawing.Point(637, 80);
+            this.btnAudit.Location = new System.Drawing.Point(717, 100);
+            this.btnAudit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAudit.Name = "btnAudit";
-            this.btnAudit.Size = new System.Drawing.Size(75, 23);
+            this.btnAudit.Size = new System.Drawing.Size(84, 29);
             this.btnAudit.TabIndex = 7;
             this.btnAudit.Text = "Audit";
             this.btnAudit.UseVisualStyleBackColor = true;
+            this.btnAudit.Click += new System.EventHandler(this.btnAudit_Click);
             // 
             // btnDeposit
             // 
-            this.btnDeposit.Location = new System.Drawing.Point(283, 479);
+            this.btnDeposit.Location = new System.Drawing.Point(318, 599);
+            this.btnDeposit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDeposit.Name = "btnDeposit";
-            this.btnDeposit.Size = new System.Drawing.Size(142, 71);
+            this.btnDeposit.Size = new System.Drawing.Size(160, 89);
             this.btnDeposit.TabIndex = 8;
             this.btnDeposit.Text = "Deposit";
             this.btnDeposit.UseVisualStyleBackColor = true;
@@ -97,9 +100,10 @@
             // 
             // btnWithdraw
             // 
-            this.btnWithdraw.Location = new System.Drawing.Point(431, 479);
+            this.btnWithdraw.Location = new System.Drawing.Point(485, 599);
+            this.btnWithdraw.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnWithdraw.Name = "btnWithdraw";
-            this.btnWithdraw.Size = new System.Drawing.Size(142, 71);
+            this.btnWithdraw.Size = new System.Drawing.Size(160, 89);
             this.btnWithdraw.TabIndex = 9;
             this.btnWithdraw.Text = "Withdraw";
             this.btnWithdraw.UseVisualStyleBackColor = true;
@@ -107,9 +111,10 @@
             // 
             // btnBills
             // 
-            this.btnBills.Location = new System.Drawing.Point(579, 479);
+            this.btnBills.Location = new System.Drawing.Point(651, 599);
+            this.btnBills.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBills.Name = "btnBills";
-            this.btnBills.Size = new System.Drawing.Size(142, 71);
+            this.btnBills.Size = new System.Drawing.Size(160, 89);
             this.btnBills.TabIndex = 10;
             this.btnBills.Text = "Bills";
             this.btnBills.UseVisualStyleBackColor = true;
@@ -119,29 +124,31 @@
             this.CalendarTable.ColumnCount = 7;
             this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.04504F));
             this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.95496F));
-            this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
-            this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
-            this.CalendarTable.Location = new System.Drawing.Point(283, 178);
+            this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
+            this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
+            this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.CalendarTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
+            this.CalendarTable.Location = new System.Drawing.Point(318, 222);
+            this.CalendarTable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CalendarTable.Name = "CalendarTable";
             this.CalendarTable.RowCount = 7;
             this.CalendarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.84211F));
             this.CalendarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.15789F));
-            this.CalendarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.CalendarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.CalendarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.CalendarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.CalendarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.CalendarTable.Size = new System.Drawing.Size(428, 295);
+            this.CalendarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.CalendarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.CalendarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.CalendarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.CalendarTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.CalendarTable.Size = new System.Drawing.Size(482, 369);
             this.CalendarTable.TabIndex = 11;
+            this.CalendarTable.Paint += new System.Windows.Forms.PaintEventHandler(this.CalendarTable_Paint);
             // 
             // Calendar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1098, 642);
+            this.ClientSize = new System.Drawing.Size(1235, 802);
             this.Controls.Add(this.CalendarTable);
             this.Controls.Add(this.btnBills);
             this.Controls.Add(this.btnWithdraw);
