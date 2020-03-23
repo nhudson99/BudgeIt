@@ -62,9 +62,10 @@ namespace BudgeIt
                  * Data Source=DESKTOP-GJ2VEDA\\MSSQLSERVER02; - Niles
                  * Data Source=NATE-SURFACE; - Nate surface
                  * Data Source=DESKTOP-V7U3425; - Nate PC
+                 * DESKTOP-V7U3425; - Justin's MiniComputer
                  * */
                 sqlConnection.ConnectionString =
-                        "Data Source=NATE-SURFACE;" +
+                        "Data Source= DESKTOP-V7U3425;" +
                         "Initial Catalog=BudgeIt;" +
                         "Integrated Security=True";
                 sqlConnection.Open();
