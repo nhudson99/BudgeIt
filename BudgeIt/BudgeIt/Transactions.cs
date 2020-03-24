@@ -14,6 +14,8 @@ namespace BudgeIt
     public partial class Transactions : Form
     {
         public SqlConnection sqlConnection = new SqlConnection();
+        public int userID;
+        public string Fname;
 
         public Transactions()
         {
@@ -41,7 +43,7 @@ namespace BudgeIt
 
             while (reader.Read())
             {
-                comboBoxTransactionsUserID.Items.Add(reader[0].ToString());
+                //comboBoxTransactionsUserID.Items.Add(reader[0].ToString());
 
             }
 
@@ -49,13 +51,47 @@ namespace BudgeIt
 
 
             textBoxTransactionsCurrentBalance.Enabled = false;
+
+            lblName.Text = Fname;
+
+            try
+            {
+                SqlCommand cmdload = sqlConnection.CreateCommand();
+                cmdload.CommandText = "Select * from [Transactions] where uId= @id";
+                cmdload.Parameters.AddWithValue("@id", userID);
+                reader = cmdload.ExecuteReader();
+
+                DataTable table = new DataTable();
+                table.Load(reader);
+                dataGridView1.DataSource = table;
+                reader.Close();
+
+
+                // To load the amount from the DB ---------------------------------------------------------------------- MAJED
+
+                SqlCommand cmdCurrentBalance = sqlConnection.CreateCommand();
+                cmdCurrentBalance.CommandText = "Select Bal from Users where UserId =@id";
+                cmdCurrentBalance.Parameters.AddWithValue("@id", userID);
+                SqlDataReader reader1 = cmdCurrentBalance.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    textBoxTransactionsCurrentBalance.Text = reader1[0].ToString();
+                }
+
+                reader1.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void comboBoxTransactionsUserID_SelectedIndexChanged(object sender, EventArgs e)
         {
             SqlCommand cmdload = sqlConnection.CreateCommand();
             cmdload.CommandText = "Select * from [Transactions] where uId= @id";
-            cmdload.Parameters.AddWithValue("@id", int.Parse(comboBoxTransactionsUserID.Text));
+            cmdload.Parameters.AddWithValue("@id", userID);
             SqlDataReader reader = cmdload.ExecuteReader();
 
             DataTable table = new DataTable();
@@ -68,7 +104,7 @@ namespace BudgeIt
 
             SqlCommand cmdCurrentBalance = sqlConnection.CreateCommand();
             cmdCurrentBalance.CommandText = "Select Bal from Users where UserId =@id";
-            cmdCurrentBalance.Parameters.AddWithValue("@id", int.Parse(comboBoxTransactionsUserID.Text));
+            cmdCurrentBalance.Parameters.AddWithValue("@id", userID);
             SqlDataReader reader1 = cmdCurrentBalance.ExecuteReader();
 
             while (reader1.Read())

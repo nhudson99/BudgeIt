@@ -75,7 +75,7 @@
             // textBoxDescription
             // 
             this.textBoxDescription.Location = new System.Drawing.Point(712, 363);
-            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.Size = new System.Drawing.Size(504, 31);
             this.textBoxDescription.TabIndex = 64;
@@ -101,7 +101,7 @@
             this.buttonGoToWithdraw.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGoToWithdraw.ForeColor = System.Drawing.Color.Red;
             this.buttonGoToWithdraw.Location = new System.Drawing.Point(798, 640);
-            this.buttonGoToWithdraw.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonGoToWithdraw.Margin = new System.Windows.Forms.Padding(6);
             this.buttonGoToWithdraw.Name = "buttonGoToWithdraw";
             this.buttonGoToWithdraw.Size = new System.Drawing.Size(334, 62);
             this.buttonGoToWithdraw.TabIndex = 63;
@@ -114,7 +114,7 @@
             this.buttonAllTransaction.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAllTransaction.ForeColor = System.Drawing.Color.Blue;
             this.buttonAllTransaction.Location = new System.Drawing.Point(798, 787);
-            this.buttonAllTransaction.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonAllTransaction.Margin = new System.Windows.Forms.Padding(6);
             this.buttonAllTransaction.Name = "buttonAllTransaction";
             this.buttonAllTransaction.Size = new System.Drawing.Size(334, 62);
             this.buttonAllTransaction.TabIndex = 62;
@@ -127,7 +127,7 @@
             this.buttonGoToDeposit.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGoToDeposit.ForeColor = System.Drawing.Color.Green;
             this.buttonGoToDeposit.Location = new System.Drawing.Point(798, 713);
-            this.buttonGoToDeposit.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonGoToDeposit.Margin = new System.Windows.Forms.Padding(6);
             this.buttonGoToDeposit.Name = "buttonGoToDeposit";
             this.buttonGoToDeposit.Size = new System.Drawing.Size(334, 62);
             this.buttonGoToDeposit.TabIndex = 61;
@@ -162,7 +162,7 @@
             // 
             this.buttonWithdrawBack.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.buttonWithdrawBack.Location = new System.Drawing.Point(1060, 512);
-            this.buttonWithdrawBack.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonWithdrawBack.Margin = new System.Windows.Forms.Padding(6);
             this.buttonWithdrawBack.Name = "buttonWithdrawBack";
             this.buttonWithdrawBack.Size = new System.Drawing.Size(160, 63);
             this.buttonWithdrawBack.TabIndex = 56;
@@ -172,7 +172,7 @@
             // textBoxBillsAmount
             // 
             this.textBoxBillsAmount.Location = new System.Drawing.Point(712, 290);
-            this.textBoxBillsAmount.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBoxBillsAmount.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxBillsAmount.Name = "textBoxBillsAmount";
             this.textBoxBillsAmount.Size = new System.Drawing.Size(504, 31);
             this.textBoxBillsAmount.TabIndex = 55;
@@ -181,7 +181,7 @@
             // 
             this.buttonBillsDelete.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBillsDelete.Location = new System.Drawing.Point(884, 512);
-            this.buttonBillsDelete.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonBillsDelete.Margin = new System.Windows.Forms.Padding(6);
             this.buttonBillsDelete.Name = "buttonBillsDelete";
             this.buttonBillsDelete.Size = new System.Drawing.Size(164, 63);
             this.buttonBillsDelete.TabIndex = 54;
@@ -194,7 +194,7 @@
             this.buttonBillsPay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBillsPay.ForeColor = System.Drawing.Color.Red;
             this.buttonBillsPay.Location = new System.Drawing.Point(712, 512);
-            this.buttonBillsPay.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonBillsPay.Margin = new System.Windows.Forms.Padding(6);
             this.buttonBillsPay.Name = "buttonBillsPay";
             this.buttonBillsPay.Size = new System.Drawing.Size(160, 63);
             this.buttonBillsPay.TabIndex = 53;
@@ -216,7 +216,7 @@
             // textBoxBillsCurrentBalance
             // 
             this.textBoxBillsCurrentBalance.Location = new System.Drawing.Point(712, 213);
-            this.textBoxBillsCurrentBalance.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBoxBillsCurrentBalance.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxBillsCurrentBalance.Name = "textBoxBillsCurrentBalance";
             this.textBoxBillsCurrentBalance.Size = new System.Drawing.Size(504, 31);
             this.textBoxBillsCurrentBalance.TabIndex = 49;
@@ -261,6 +261,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1678, 931);
             this.Controls.Add(this.DTPBillDate);
             this.Controls.Add(this.lblName);
@@ -281,8 +282,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxBillsCurrentBalance);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Bills";
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 100, 100);
             this.Text = "Bills";
             this.Load += new System.EventHandler(this.Bills_Load);
             this.ResumeLayout(false);

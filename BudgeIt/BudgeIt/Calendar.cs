@@ -86,14 +86,21 @@ namespace BudgeIt
         {
             Deposit depo = new Deposit();
             depo.sqlConnection1.ConnectionString = sqlConnection.ConnectionString;
+            depo.Fname = Fname;
+            depo.userID = userID;
             depo.ShowDialog();
+            Reload();
+            
         }
 
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
             Withdraw with = new Withdraw();
             with.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
+            with.Fname = Fname;
+            with.userID = userID;
             with.ShowDialog();
+            Reload();
         }
 
         private void btnBills_Click(object sender, EventArgs e)
@@ -103,6 +110,7 @@ namespace BudgeIt
             bill.Fname = Fname;
             bill.userID = userID;
             bill.ShowDialog();
+            Reload();
         }
 
         private void CalendarTable_Paint(object sender, PaintEventArgs e)
@@ -169,7 +177,51 @@ namespace BudgeIt
         {
             Transactions t = new Transactions();
             t.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
+            t.Fname = Fname;
+            t.userID = userID;
             t.ShowDialog();
+            Reload();
+        }
+
+        private void Reload()
+        {
+            SqlCommand cmdGetExpenses = sqlConnection.CreateCommand();
+            cmdGetExpenses.CommandText = "SELECT SUM(amt) FROM BILLS WHERE uId = @uID";
+            cmdGetExpenses.Parameters.AddWithValue("@uID", userID);
+
+            SqlDataReader reader = cmdGetExpenses.ExecuteReader();
+
+            if (reader.Read())
+            {
+                //MessageBox.Show(reader[0].ToString());
+                if (reader[0] != DBNull.Value)
+                    Expenses.Text = reader[0].ToString();
+                else
+                {
+                    Expenses.Text = "0";
+                }
+            }
+            reader.Close();
+
+            SqlCommand cmdGetIncome = sqlConnection.CreateCommand();
+            cmdGetIncome.CommandText = "SELECT Bal FROM USERS WHERE UserId = @uID";
+            cmdGetIncome.Parameters.AddWithValue("@uID", userID);
+
+            reader = cmdGetIncome.ExecuteReader();
+
+            if (reader.Read())
+            {
+                //MessageBox.Show(reader[0].ToString());
+                if (reader[0] != DBNull.Value)
+                    Income.Text = reader[0].ToString();
+                else
+                {
+                    Income.Text = "0";
+                }
+            }
+            reader.Close();
+
+            Disposable.Text = (float.Parse(Income.Text) - float.Parse(Expenses.Text)).ToString();
         }
     }
 }

@@ -32,8 +32,6 @@
             this.buttonAllTransaction = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonGoToWithdraw = new System.Windows.Forms.Button();
-            this.comboBoxDepositUserID = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.buttonDepositBack = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxDepositAmount = new System.Windows.Forms.TextBox();
@@ -43,6 +41,8 @@
             this.textBoxDepositNewBalance = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxDepositCurrentBalance = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonGotoBills
@@ -95,27 +95,6 @@
             this.buttonGoToWithdraw.Text = "Go to Withdraw";
             this.buttonGoToWithdraw.UseVisualStyleBackColor = true;
             this.buttonGoToWithdraw.Click += new System.EventHandler(this.buttonGoToWithdraw_Click);
-            // 
-            // comboBoxDepositUserID
-            // 
-            this.comboBoxDepositUserID.FormattingEnabled = true;
-            this.comboBoxDepositUserID.Location = new System.Drawing.Point(521, 196);
-            this.comboBoxDepositUserID.Margin = new System.Windows.Forms.Padding(6);
-            this.comboBoxDepositUserID.Name = "comboBoxDepositUserID";
-            this.comboBoxDepositUserID.Size = new System.Drawing.Size(504, 33);
-            this.comboBoxDepositUserID.TabIndex = 40;
-            this.comboBoxDepositUserID.SelectedIndexChanged += new System.EventHandler(this.comboBoxDepositUserID_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(211, 196);
-            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(146, 39);
-            this.label4.TabIndex = 39;
-            this.label4.Text = "User ID :";
             // 
             // buttonDepositBack
             // 
@@ -210,17 +189,36 @@
             this.textBoxDepositCurrentBalance.Size = new System.Drawing.Size(504, 31);
             this.textBoxDepositCurrentBalance.TabIndex = 30;
             // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(245, 72);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(70, 25);
+            this.lblName.TabIndex = 72;
+            this.lblName.Text = "label9";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(126, 72);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 25);
+            this.label4.TabIndex = 71;
+            this.label4.Text = "Welcome,";
+            // 
             // Deposit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1419, 929);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonGotoBills);
             this.Controls.Add(this.buttonAllTransaction);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonGoToWithdraw);
-            this.Controls.Add(this.comboBoxDepositUserID);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonDepositBack);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxDepositAmount);
@@ -231,6 +229,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxDepositCurrentBalance);
             this.Name = "Deposit";
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 100, 100);
             this.Text = "Deposit";
             this.Load += new System.EventHandler(this.Deposit_Load);
             this.ResumeLayout(false);
@@ -244,8 +243,6 @@
         private System.Windows.Forms.Button buttonAllTransaction;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonGoToWithdraw;
-        private System.Windows.Forms.ComboBox comboBoxDepositUserID;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonDepositBack;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxDepositAmount;
@@ -255,5 +252,7 @@
         private System.Windows.Forms.TextBox textBoxDepositNewBalance;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxDepositCurrentBalance;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label label4;
     }
 }

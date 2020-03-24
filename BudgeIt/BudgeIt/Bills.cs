@@ -56,6 +56,28 @@ namespace BudgeIt
             }
 
             reader.Close();
+
+            try
+            {
+                // To load the amount from the DB ---------------------------------------------------------- Eliseo
+
+                SqlCommand cmdCurrentBalance = sqlConnection.CreateCommand();
+                cmdCurrentBalance.CommandText = "Select Bal from Users where UserId =@bal";
+                cmdCurrentBalance.Parameters.AddWithValue("@bal", userID);
+                reader = cmdCurrentBalance.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    textBoxBillsCurrentBalance.Text = reader[0].ToString();
+                    //textBoxBillsNewBalance.Text = "0.0";
+                }
+
+                reader.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void comboBoxBillsUserID_SelectedIndexChanged(object sender, EventArgs e)
