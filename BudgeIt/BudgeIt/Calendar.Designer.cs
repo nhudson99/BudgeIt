@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calendar));
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,142 +42,176 @@
             this.Income = new System.Windows.Forms.TextBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.LBLName = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 21);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(22, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 25);
+            this.label1.Size = new System.Drawing.Size(270, 58);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome, ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(420, 171);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(438, 140);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 25);
+            this.label3.Size = new System.Drawing.Size(68, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Income";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(420, 125);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(438, 103);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 25);
+            this.label2.Size = new System.Drawing.Size(98, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Disposable";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(420, 79);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(438, 66);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 25);
+            this.label4.Size = new System.Drawing.Size(87, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Expenses";
             // 
             // btnAudit
             // 
-            this.btnAudit.Location = new System.Drawing.Point(1015, 119);
-            this.btnAudit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAudit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAudit.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAudit.Location = new System.Drawing.Point(770, 39);
             this.btnAudit.Name = "btnAudit";
-            this.btnAudit.Size = new System.Drawing.Size(112, 37);
+            this.btnAudit.Size = new System.Drawing.Size(226, 164);
             this.btnAudit.TabIndex = 7;
             this.btnAudit.Text = "Audit";
-            this.btnAudit.UseVisualStyleBackColor = true;
+            this.btnAudit.UseVisualStyleBackColor = false;
             this.btnAudit.Click += new System.EventHandler(this.btnAudit_Click);
             // 
             // btnDeposit
             // 
-            this.btnDeposit.Location = new System.Drawing.Point(424, 748);
-            this.btnDeposit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDeposit.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeposit.ForeColor = System.Drawing.Color.Black;
+            this.btnDeposit.Location = new System.Drawing.Point(230, 670);
             this.btnDeposit.Name = "btnDeposit";
-            this.btnDeposit.Size = new System.Drawing.Size(212, 112);
+            this.btnDeposit.Size = new System.Drawing.Size(235, 164);
             this.btnDeposit.TabIndex = 8;
             this.btnDeposit.Text = "Deposit";
-            this.btnDeposit.UseVisualStyleBackColor = true;
+            this.btnDeposit.UseVisualStyleBackColor = false;
             this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
             // 
             // btnWithdraw
             // 
-            this.btnWithdraw.Location = new System.Drawing.Point(646, 748);
-            this.btnWithdraw.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnWithdraw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnWithdraw.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWithdraw.ForeColor = System.Drawing.Color.Black;
+            this.btnWithdraw.Location = new System.Drawing.Point(560, 670);
             this.btnWithdraw.Name = "btnWithdraw";
-            this.btnWithdraw.Size = new System.Drawing.Size(212, 112);
+            this.btnWithdraw.Size = new System.Drawing.Size(273, 164);
             this.btnWithdraw.TabIndex = 9;
             this.btnWithdraw.Text = "Withdraw";
-            this.btnWithdraw.UseVisualStyleBackColor = true;
+            this.btnWithdraw.UseVisualStyleBackColor = false;
             this.btnWithdraw.Click += new System.EventHandler(this.btnWithdraw_Click);
             // 
             // btnBills
             // 
-            this.btnBills.Location = new System.Drawing.Point(868, 748);
-            this.btnBills.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBills.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnBills.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBills.ForeColor = System.Drawing.Color.Black;
+            this.btnBills.Location = new System.Drawing.Point(900, 670);
             this.btnBills.Name = "btnBills";
-            this.btnBills.Size = new System.Drawing.Size(212, 112);
+            this.btnBills.Size = new System.Drawing.Size(226, 164);
             this.btnBills.TabIndex = 10;
             this.btnBills.Text = "Bills";
-            this.btnBills.UseVisualStyleBackColor = true;
+            this.btnBills.UseVisualStyleBackColor = false;
             this.btnBills.Click += new System.EventHandler(this.btnBills_Click);
             // 
             // Expenses
             // 
-            this.Expenses.Location = new System.Drawing.Point(746, 79);
-            this.Expenses.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Expenses.Location = new System.Drawing.Point(560, 63);
+            this.Expenses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Expenses.Name = "Expenses";
-            this.Expenses.Size = new System.Drawing.Size(196, 31);
+            this.Expenses.Size = new System.Drawing.Size(148, 26);
             this.Expenses.TabIndex = 12;
             this.Expenses.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Disposable
             // 
-            this.Disposable.Location = new System.Drawing.Point(746, 122);
-            this.Disposable.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Disposable.Location = new System.Drawing.Point(560, 98);
+            this.Disposable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Disposable.Name = "Disposable";
-            this.Disposable.Size = new System.Drawing.Size(196, 31);
+            this.Disposable.Size = new System.Drawing.Size(148, 26);
             this.Disposable.TabIndex = 13;
             this.Disposable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Income
             // 
-            this.Income.Location = new System.Drawing.Point(746, 165);
-            this.Income.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Income.Location = new System.Drawing.Point(560, 132);
+            this.Income.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Income.Name = "Income";
-            this.Income.Size = new System.Drawing.Size(196, 31);
+            this.Income.Size = new System.Drawing.Size(148, 26);
             this.Income.TabIndex = 14;
             this.Income.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 2);
-            this.monthCalendar1.Location = new System.Drawing.Point(746, 373);
-            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(18, 17, 18, 17);
+            this.monthCalendar1.BackColor = System.Drawing.Color.White;
+            this.monthCalendar1.Location = new System.Drawing.Point(516, 323);
+            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 16;
             // 
             // LBLName
             // 
             this.LBLName.AutoSize = true;
-            this.LBLName.Location = new System.Drawing.Point(200, 25);
-            this.LBLName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LBLName.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLName.Location = new System.Drawing.Point(13, 95);
+            this.LBLName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LBLName.Name = "LBLName";
-            this.LBLName.Size = new System.Drawing.Size(70, 25);
+            this.LBLName.Size = new System.Drawing.Size(165, 58);
             this.LBLName.TabIndex = 17;
             this.LBLName.Text = "label5";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 453);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(487, 549);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(642, 280);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(776, 749);
+            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.TabStop = false;
+            // 
             // Calendar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2196, 1235);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.ClientSize = new System.Drawing.Size(1647, 988);
             this.Controls.Add(this.LBLName);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.Income);
@@ -190,10 +225,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox2);
             this.Name = "Calendar";
             this.Text = "Calendar";
             this.Load += new System.EventHandler(this.Calendar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,6 +252,8 @@
         private System.Windows.Forms.TextBox Income;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label LBLName;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
