@@ -59,12 +59,13 @@ namespace BudgeIt
             {
                 /* Connection strings servers 
                  * USE YOURS
-                 * Data Source=DESKTOP-GJ2VEDA\\MSSQLSERVER02; - 
+                 * Data Source=DESKTOP-GJ2VEDA\\MSSQLSERVER02; - Niles
                  * Data Source=NATE-SURFACE; - Nate surface
                  * Data Source=DESKTOP-V7U3425; - Nate PC
+                 * DESKTOP-L3400E3; - Justin's MiniComputer
                  * */
                 sqlConnection.ConnectionString =
-                        "Data Source=DESKTOP-GJ2VEDA\\MSSQLSERVER02;" +
+                        "Data Source= DESKTOP-L3400E3;" +
                         "Initial Catalog=BudgeIt;" +
                         "Integrated Security=True";
                 sqlConnection.Open();
