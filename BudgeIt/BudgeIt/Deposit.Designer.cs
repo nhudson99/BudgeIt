@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Deposit));
-            this.buttonGotoBills = new System.Windows.Forms.Button();
             this.buttonAllTransaction = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.buttonGoToWithdraw = new System.Windows.Forms.Button();
             this.comboBoxDepositUserID = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonDepositBack = new System.Windows.Forms.Button();
@@ -48,26 +46,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonGotoBills
-            // 
-            this.buttonGotoBills.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.buttonGotoBills.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGotoBills.ForeColor = System.Drawing.Color.Black;
-            this.buttonGotoBills.Location = new System.Drawing.Point(448, 666);
-            this.buttonGotoBills.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonGotoBills.Name = "buttonGotoBills";
-            this.buttonGotoBills.Size = new System.Drawing.Size(250, 50);
-            this.buttonGotoBills.TabIndex = 44;
-            this.buttonGotoBills.Text = "Go to Bills";
-            this.buttonGotoBills.UseVisualStyleBackColor = false;
-            this.buttonGotoBills.Click += new System.EventHandler(this.buttonGotoBills_Click);
-            // 
             // buttonAllTransaction
             // 
             this.buttonAllTransaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.buttonAllTransaction.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAllTransaction.ForeColor = System.Drawing.Color.Black;
-            this.buttonAllTransaction.Location = new System.Drawing.Point(448, 607);
+            this.buttonAllTransaction.Location = new System.Drawing.Point(482, 510);
             this.buttonAllTransaction.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonAllTransaction.Name = "buttonAllTransaction";
             this.buttonAllTransaction.Size = new System.Drawing.Size(250, 50);
@@ -88,20 +72,6 @@
             this.label5.Size = new System.Drawing.Size(191, 53);
             this.label5.TabIndex = 42;
             this.label5.Text = "Deposit";
-            // 
-            // buttonGoToWithdraw
-            // 
-            this.buttonGoToWithdraw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.buttonGoToWithdraw.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGoToWithdraw.ForeColor = System.Drawing.Color.Black;
-            this.buttonGoToWithdraw.Location = new System.Drawing.Point(448, 549);
-            this.buttonGoToWithdraw.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonGoToWithdraw.Name = "buttonGoToWithdraw";
-            this.buttonGoToWithdraw.Size = new System.Drawing.Size(250, 50);
-            this.buttonGoToWithdraw.TabIndex = 41;
-            this.buttonGoToWithdraw.Text = "Go to Withdraw";
-            this.buttonGoToWithdraw.UseVisualStyleBackColor = false;
-            this.buttonGoToWithdraw.Click += new System.EventHandler(this.buttonGoToWithdraw_Click);
             // 
             // comboBoxDepositUserID
             // 
@@ -241,10 +211,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1064, 743);
-            this.Controls.Add(this.buttonGotoBills);
             this.Controls.Add(this.buttonAllTransaction);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.buttonGoToWithdraw);
             this.Controls.Add(this.comboBoxDepositUserID);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonDepositBack);
@@ -257,7 +225,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxDepositCurrentBalance);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Deposit";
             this.Text = "Deposit";
             this.Load += new System.EventHandler(this.Deposit_Load);
@@ -268,11 +236,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonGotoBills;
         private System.Windows.Forms.Button buttonAllTransaction;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button buttonGoToWithdraw;
         private System.Windows.Forms.ComboBox comboBoxDepositUserID;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonDepositBack;

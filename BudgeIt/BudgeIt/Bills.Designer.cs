@@ -34,9 +34,7 @@
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
             this.label8 = new System.Windows.Forms.Label();
-            this.buttonGoToWithdraw = new System.Windows.Forms.Button();
             this.buttonAllTransaction = new System.Windows.Forms.Button();
-            this.buttonGoToDeposit = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonWithdrawBack = new System.Windows.Forms.Button();
@@ -100,26 +98,12 @@
             this.label8.TabIndex = 67;
             this.label8.Text = "$";
             // 
-            // buttonGoToWithdraw
-            // 
-            this.buttonGoToWithdraw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.buttonGoToWithdraw.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGoToWithdraw.ForeColor = System.Drawing.Color.Black;
-            this.buttonGoToWithdraw.Location = new System.Drawing.Point(598, 512);
-            this.buttonGoToWithdraw.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonGoToWithdraw.Name = "buttonGoToWithdraw";
-            this.buttonGoToWithdraw.Size = new System.Drawing.Size(250, 50);
-            this.buttonGoToWithdraw.TabIndex = 63;
-            this.buttonGoToWithdraw.Text = "Go to Withdraw";
-            this.buttonGoToWithdraw.UseVisualStyleBackColor = false;
-            this.buttonGoToWithdraw.Click += new System.EventHandler(this.buttonGoToWithdraw_Click);
-            // 
             // buttonAllTransaction
             // 
             this.buttonAllTransaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.buttonAllTransaction.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAllTransaction.ForeColor = System.Drawing.Color.Black;
-            this.buttonAllTransaction.Location = new System.Drawing.Point(598, 630);
+            this.buttonAllTransaction.Location = new System.Drawing.Point(602, 512);
             this.buttonAllTransaction.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonAllTransaction.Name = "buttonAllTransaction";
             this.buttonAllTransaction.Size = new System.Drawing.Size(250, 50);
@@ -127,20 +111,6 @@
             this.buttonAllTransaction.Text = "All Transaction";
             this.buttonAllTransaction.UseVisualStyleBackColor = false;
             this.buttonAllTransaction.Click += new System.EventHandler(this.buttonAllTransaction_Click);
-            // 
-            // buttonGoToDeposit
-            // 
-            this.buttonGoToDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.buttonGoToDeposit.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGoToDeposit.ForeColor = System.Drawing.Color.Black;
-            this.buttonGoToDeposit.Location = new System.Drawing.Point(598, 570);
-            this.buttonGoToDeposit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonGoToDeposit.Name = "buttonGoToDeposit";
-            this.buttonGoToDeposit.Size = new System.Drawing.Size(250, 50);
-            this.buttonGoToDeposit.TabIndex = 61;
-            this.buttonGoToDeposit.Text = "Go to Deposit";
-            this.buttonGoToDeposit.UseVisualStyleBackColor = false;
-            this.buttonGoToDeposit.Click += new System.EventHandler(this.buttonGoToDeposit_Click);
             // 
             // label5
             // 
@@ -273,7 +243,7 @@
             // DTPBillDate
             // 
             this.DTPBillDate.Location = new System.Drawing.Point(534, 343);
-            this.DTPBillDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DTPBillDate.Margin = new System.Windows.Forms.Padding(2);
             this.DTPBillDate.Name = "DTPBillDate";
             this.DTPBillDate.Size = new System.Drawing.Size(379, 26);
             this.DTPBillDate.TabIndex = 71;
@@ -300,9 +270,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.buttonGoToWithdraw);
             this.Controls.Add(this.buttonAllTransaction);
-            this.Controls.Add(this.buttonGoToDeposit);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonWithdrawBack);
@@ -329,9 +297,7 @@
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Data.SqlClient.SqlConnection sqlConnection1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button buttonGoToWithdraw;
         private System.Windows.Forms.Button buttonAllTransaction;
-        private System.Windows.Forms.Button buttonGoToDeposit;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonWithdrawBack;

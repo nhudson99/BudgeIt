@@ -34,7 +34,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.buttonAllTransaction = new System.Windows.Forms.Button();
-            this.buttonGoToDeposit = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
@@ -101,26 +100,13 @@
             this.buttonAllTransaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.buttonAllTransaction.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAllTransaction.ForeColor = System.Drawing.Color.Black;
-            this.buttonAllTransaction.Location = new System.Drawing.Point(577, 643);
+            this.buttonAllTransaction.Location = new System.Drawing.Point(597, 548);
             this.buttonAllTransaction.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonAllTransaction.Name = "buttonAllTransaction";
             this.buttonAllTransaction.Size = new System.Drawing.Size(277, 81);
             this.buttonAllTransaction.TabIndex = 67;
             this.buttonAllTransaction.Text = "All Transaction";
             this.buttonAllTransaction.UseVisualStyleBackColor = false;
-            // 
-            // buttonGoToDeposit
-            // 
-            this.buttonGoToDeposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.buttonGoToDeposit.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGoToDeposit.ForeColor = System.Drawing.Color.Black;
-            this.buttonGoToDeposit.Location = new System.Drawing.Point(576, 539);
-            this.buttonGoToDeposit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonGoToDeposit.Name = "buttonGoToDeposit";
-            this.buttonGoToDeposit.Size = new System.Drawing.Size(278, 81);
-            this.buttonGoToDeposit.TabIndex = 66;
-            this.buttonGoToDeposit.Text = "Go to Deposit";
-            this.buttonGoToDeposit.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -298,7 +284,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.buttonAllTransaction);
-            this.Controls.Add(this.buttonGoToDeposit);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label8);
@@ -331,7 +316,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Button buttonAllTransaction;
-        private System.Windows.Forms.Button buttonGoToDeposit;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Data.SqlClient.SqlConnection sqlConnection1;
