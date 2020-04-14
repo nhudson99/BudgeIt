@@ -65,7 +65,7 @@ namespace BudgeIt
                  * DESKTOP-L3400E3; - Justin's MiniComputer
                  * */
                 sqlConnection.ConnectionString =
-                        "Data Source= DESKTOP-GJ2VEDA\\MSSQLSERVER02;" +
+                        "Data Source= DESKTOP-V7U3425;" +
                         "Initial Catalog=BudgeIt;" +
                         "Integrated Security=True";
                 sqlConnection.Open();

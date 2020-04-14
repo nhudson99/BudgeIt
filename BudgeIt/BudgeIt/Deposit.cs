@@ -14,6 +14,8 @@ namespace BudgeIt
     public partial class Deposit : Form
     {
         public SqlConnection sqlConnection1 = new SqlConnection();
+        public int userID;
+        public string Fname;
 
         public Deposit()
         {
@@ -40,7 +42,7 @@ namespace BudgeIt
                 MessageBox.Show(ex.Message);
             }
 
-            // to load all the user ID ------------------------------------------------------------------ MAJED
+            /* to load all the user ID ------------------------------------------------------------------ MAJED
 
             SqlCommand cmdLoad = sqlConnection1.CreateCommand();
             cmdLoad.CommandText = "Select UserId from Users";
@@ -52,7 +54,22 @@ namespace BudgeIt
             }
 
             reader.Close();
+            */
 
+            SqlCommand cmdCurrentBalance = sqlConnection1.CreateCommand();
+            cmdCurrentBalance.CommandText = "Select Bal from Users where UserId =@bal";
+            cmdCurrentBalance.Parameters.AddWithValue("@bal", userID);
+            SqlDataReader reader = cmdCurrentBalance.ExecuteReader();
+
+            if (reader.Read())
+            {
+                textBoxDepositCurrentBalance.Text = reader[0].ToString();
+                textBoxDepositNewBalance.Text = "0.0";
+            }
+
+            reader.Close();
+
+            lblName.Text = Fname;
         }
 
         private void comboBoxDepositUserID_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,7 +78,7 @@ namespace BudgeIt
 
             SqlCommand cmdCurrentBalance = sqlConnection1.CreateCommand();
             cmdCurrentBalance.CommandText = "Select Bal from Users where UserId =@bal";
-            cmdCurrentBalance.Parameters.AddWithValue("@bal", decimal.Parse(comboBoxDepositUserID.Text));
+            cmdCurrentBalance.Parameters.AddWithValue("@bal", userID);
             SqlDataReader reader = cmdCurrentBalance.ExecuteReader();
 
             if (reader.Read())
@@ -104,7 +121,7 @@ namespace BudgeIt
                 String Type = "Deposit";
                 DateTime Date = DateTime.Now;
                 decimal Amt = decimal.Parse(textBoxDepositAmount.Text);
-                int UserId = int.Parse(comboBoxDepositUserID.Text);
+                
 
                 decimal CurrentBalance = decimal.Parse(textBoxDepositCurrentBalance.Text);
 
@@ -137,7 +154,7 @@ namespace BudgeIt
                 cmdNewDeposit.Parameters.AddWithValue("@Type", Type);
                 cmdNewDeposit.Parameters.AddWithValue("@Date", Date);
                 cmdNewDeposit.Parameters.AddWithValue("@Amt", Amt);
-                cmdNewDeposit.Parameters.AddWithValue("@UserId", UserId);
+                cmdNewDeposit.Parameters.AddWithValue("@UserId", userID);
 
                 cmdNewDeposit.ExecuteNonQuery();
 
