@@ -14,6 +14,8 @@ namespace BudgeIt
     public partial class Withdraw : Form
     {
         public SqlConnection sqlConnection = new SqlConnection();
+        public int userID;
+        public string Fname;
 
         public Withdraw()
         {
@@ -26,7 +28,7 @@ namespace BudgeIt
 
             SqlCommand cmdCurrentBalance = sqlConnection.CreateCommand();
             cmdCurrentBalance.CommandText = "Select Bal from Users where UserId =@bal";
-            cmdCurrentBalance.Parameters.AddWithValue("@bal", decimal.Parse(comboBoxWithdrawUserID.Text));
+            cmdCurrentBalance.Parameters.AddWithValue("@bal", userID);
             SqlDataReader reader = cmdCurrentBalance.ExecuteReader();
 
             if (reader.Read())
@@ -60,7 +62,7 @@ namespace BudgeIt
                 MessageBox.Show(ex.Message);
             }
 
-            // to load all the user ID ------------------------------------------------------------------ MAJED
+            /* to load all the user ID ------------------------------------------------------------------ MAJED
 
             SqlCommand cmdLoad = sqlConnection.CreateCommand();
             cmdLoad.CommandText = "Select UserId from Users";
@@ -71,7 +73,22 @@ namespace BudgeIt
                 comboBoxWithdrawUserID.Items.Add(reader[0].ToString());
             }
 
+            reader.Close();*/
+
+            SqlCommand cmdCurrentBalance = sqlConnection.CreateCommand();
+            cmdCurrentBalance.CommandText = "Select Bal from Users where UserId =@bal";
+            cmdCurrentBalance.Parameters.AddWithValue("@bal", userID);
+            SqlDataReader reader = cmdCurrentBalance.ExecuteReader();
+
+            if (reader.Read())
+            {
+                textBoxWithdrawCurrentBalance.Text = reader[0].ToString();
+                textBoxWithdrawNewBalance.Text = "0.0";
+            }
+
             reader.Close();
+
+            lblName.Text = Fname;
         }
 
         // To clear parameters because if we need to make another operation -------------------------- MAJED
@@ -103,7 +120,7 @@ namespace BudgeIt
             String Type = "Withdraw";
             DateTime Date = DateTime.Now;
             decimal Amt = decimal.Parse(textBoxWithdrawAmount.Text);
-            int UserId = int.Parse(comboBoxWithdrawUserID.Text);
+            //int UserId = int.Parse(comboBoxWithdrawUserID.Text);
             string Notes = (textBoxDescription.Text);
 
             decimal CurrentBalance = decimal.Parse(textBoxWithdrawCurrentBalance.Text);
@@ -138,7 +155,7 @@ namespace BudgeIt
             cmdNewWithdraw.Parameters.AddWithValue("@Type", Type);
             cmdNewWithdraw.Parameters.AddWithValue("@Date", Date);
             cmdNewWithdraw.Parameters.AddWithValue("@Amt", Amt);
-            cmdNewWithdraw.Parameters.AddWithValue("@UserId", UserId);
+            cmdNewWithdraw.Parameters.AddWithValue("@UserId", userID);
 
             cmdNewWithdraw.ExecuteNonQuery();
 

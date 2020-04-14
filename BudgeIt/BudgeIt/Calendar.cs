@@ -86,6 +86,8 @@ namespace BudgeIt
         {
             Deposit depo = new Deposit();
             depo.sqlConnection1.ConnectionString = sqlConnection.ConnectionString;
+            depo.userID = userID;
+            depo.Fname = Fname;
             depo.ShowDialog();
         }
 
@@ -93,6 +95,8 @@ namespace BudgeIt
         {
             Withdraw with = new Withdraw();
             with.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
+            with.userID = userID;
+            with.Fname = Fname;
             with.ShowDialog();
         }
 
@@ -169,6 +173,8 @@ namespace BudgeIt
         {
             Transactions t = new Transactions();
             t.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
+            t.Fname = Fname;
+            t.userID = userID;
             t.ShowDialog();
         }
     }
