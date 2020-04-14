@@ -78,6 +78,7 @@
             this.buttonHome.TabIndex = 41;
             this.buttonHome.Text = "Back";
             this.buttonHome.UseVisualStyleBackColor = false;
+            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click_1);
             // 
             // dataGridView1
             // 
