@@ -47,9 +47,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxWithdrawCurrentBalance = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblName = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // label10
@@ -153,6 +152,7 @@
             this.buttonWithdrawBack.TabIndex = 61;
             this.buttonWithdrawBack.Text = "Back";
             this.buttonWithdrawBack.UseVisualStyleBackColor = false;
+            this.buttonWithdrawBack.Click += new System.EventHandler(this.buttonWithdrawBack_Click);
             // 
             // textBoxWithdrawAmount
             // 
@@ -235,36 +235,12 @@
             this.pictureBox1.TabIndex = 73;
             this.pictureBox1.TabStop = false;
             // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(33, 49);
-            this.lblName.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(115, 39);
-            this.lblName.TabIndex = 75;
-            this.lblName.Text = "label9";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(20, 10);
-            this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(176, 39);
-            this.label4.TabIndex = 74;
-            this.label4.Text = "Welcome,";
-            // 
             // Withdraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(901, 548);
-            this.Controls.Add(this.lblName);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(1352, 843);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -284,9 +260,11 @@
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Withdraw";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Withdraw";
             this.Load += new System.EventHandler(this.Withdraw_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,7 +290,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxWithdrawCurrentBalance;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label label4;
     }
 }
