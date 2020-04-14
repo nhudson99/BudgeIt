@@ -88,7 +88,7 @@ namespace BudgeIt
 
             reader.Close();
 
-            lblName.Text = Fname;
+            //lblName.Text = Fname;
         }
 
         // To clear parameters because if we need to make another operation -------------------------- MAJED

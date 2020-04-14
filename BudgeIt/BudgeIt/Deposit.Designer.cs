@@ -41,8 +41,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxDepositCurrentBalance = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonAllTransaction
@@ -50,9 +51,10 @@
             this.buttonAllTransaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.buttonAllTransaction.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAllTransaction.ForeColor = System.Drawing.Color.Black;
-            this.buttonAllTransaction.Location = new System.Drawing.Point(321, 331);
+            this.buttonAllTransaction.Location = new System.Drawing.Point(482, 509);
+            this.buttonAllTransaction.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonAllTransaction.Name = "buttonAllTransaction";
-            this.buttonAllTransaction.Size = new System.Drawing.Size(167, 32);
+            this.buttonAllTransaction.Size = new System.Drawing.Size(250, 49);
             this.buttonAllTransaction.TabIndex = 43;
             this.buttonAllTransaction.Text = "All Transaction";
             this.buttonAllTransaction.UseVisualStyleBackColor = false;
@@ -64,9 +66,10 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label5.Font = new System.Drawing.Font("Tahoma", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(315, 18);
+            this.label5.Location = new System.Drawing.Point(472, 28);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 35);
+            this.label5.Size = new System.Drawing.Size(191, 53);
             this.label5.TabIndex = 42;
             this.label5.Text = "Deposit";
             // 
@@ -75,9 +78,10 @@
             this.buttonDepositBack.BackColor = System.Drawing.Color.Black;
             this.buttonDepositBack.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.buttonDepositBack.ForeColor = System.Drawing.Color.White;
-            this.buttonDepositBack.Location = new System.Drawing.Point(449, 266);
+            this.buttonDepositBack.Location = new System.Drawing.Point(674, 409);
+            this.buttonDepositBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonDepositBack.Name = "buttonDepositBack";
-            this.buttonDepositBack.Size = new System.Drawing.Size(105, 49);
+            this.buttonDepositBack.Size = new System.Drawing.Size(158, 75);
             this.buttonDepositBack.TabIndex = 38;
             this.buttonDepositBack.Text = "Back";
             this.buttonDepositBack.UseVisualStyleBackColor = false;
@@ -88,17 +92,19 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(90, 186);
+            this.label3.Location = new System.Drawing.Point(135, 286);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 19);
+            this.label3.Size = new System.Drawing.Size(228, 29);
             this.label3.TabIndex = 37;
             this.label3.Text = "Enter an amount :";
             // 
             // textBoxDepositAmount
             // 
-            this.textBoxDepositAmount.Location = new System.Drawing.Point(261, 185);
+            this.textBoxDepositAmount.Location = new System.Drawing.Point(392, 285);
+            this.textBoxDepositAmount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxDepositAmount.Name = "textBoxDepositAmount";
-            this.textBoxDepositAmount.Size = new System.Drawing.Size(254, 20);
+            this.textBoxDepositAmount.Size = new System.Drawing.Size(379, 26);
             this.textBoxDepositAmount.TabIndex = 36;
             // 
             // buttonDepositDelete
@@ -106,9 +112,10 @@
             this.buttonDepositDelete.BackColor = System.Drawing.Color.Black;
             this.buttonDepositDelete.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDepositDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDepositDelete.Location = new System.Drawing.Point(339, 266);
+            this.buttonDepositDelete.Location = new System.Drawing.Point(508, 409);
+            this.buttonDepositDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonDepositDelete.Name = "buttonDepositDelete";
-            this.buttonDepositDelete.Size = new System.Drawing.Size(105, 49);
+            this.buttonDepositDelete.Size = new System.Drawing.Size(158, 75);
             this.buttonDepositDelete.TabIndex = 35;
             this.buttonDepositDelete.Text = "Clear";
             this.buttonDepositDelete.UseVisualStyleBackColor = false;
@@ -119,9 +126,10 @@
             this.buttonDepositDeposit.BackColor = System.Drawing.Color.Black;
             this.buttonDepositDeposit.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDepositDeposit.ForeColor = System.Drawing.Color.White;
-            this.buttonDepositDeposit.Location = new System.Drawing.Point(229, 266);
+            this.buttonDepositDeposit.Location = new System.Drawing.Point(344, 409);
+            this.buttonDepositDeposit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonDepositDeposit.Name = "buttonDepositDeposit";
-            this.buttonDepositDeposit.Size = new System.Drawing.Size(105, 49);
+            this.buttonDepositDeposit.Size = new System.Drawing.Size(158, 75);
             this.buttonDepositDeposit.TabIndex = 34;
             this.buttonDepositDeposit.Text = "Deposit";
             this.buttonDepositDeposit.UseVisualStyleBackColor = false;
@@ -132,17 +140,19 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(90, 227);
+            this.label2.Location = new System.Drawing.Point(135, 349);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 19);
+            this.label2.Size = new System.Drawing.Size(208, 29);
             this.label2.TabIndex = 33;
             this.label2.Text = "New balance is :";
             // 
             // textBoxDepositNewBalance
             // 
-            this.textBoxDepositNewBalance.Location = new System.Drawing.Point(261, 229);
+            this.textBoxDepositNewBalance.Location = new System.Drawing.Point(392, 352);
+            this.textBoxDepositNewBalance.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxDepositNewBalance.Name = "textBoxDepositNewBalance";
-            this.textBoxDepositNewBalance.Size = new System.Drawing.Size(254, 20);
+            this.textBoxDepositNewBalance.Size = new System.Drawing.Size(379, 26);
             this.textBoxDepositNewBalance.TabIndex = 32;
             // 
             // label1
@@ -150,35 +160,47 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(90, 142);
+            this.label1.Location = new System.Drawing.Point(135, 218);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 19);
+            this.label1.Size = new System.Drawing.Size(244, 29);
             this.label1.TabIndex = 31;
             this.label1.Text = "Current balance is :";
             // 
             // textBoxDepositCurrentBalance
             // 
-            this.textBoxDepositCurrentBalance.Location = new System.Drawing.Point(261, 144);
+            this.textBoxDepositCurrentBalance.Location = new System.Drawing.Point(392, 222);
+            this.textBoxDepositCurrentBalance.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxDepositCurrentBalance.Name = "textBoxDepositCurrentBalance";
-            this.textBoxDepositCurrentBalance.Size = new System.Drawing.Size(254, 20);
+            this.textBoxDepositCurrentBalance.Size = new System.Drawing.Size(379, 26);
             this.textBoxDepositCurrentBalance.TabIndex = 30;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 102);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 157);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(712, 382);
+            this.pictureBox1.Size = new System.Drawing.Size(1068, 588);
             this.pictureBox1.TabIndex = 45;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(891, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(241, 208);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 46;
+            this.pictureBox2.TabStop = false;
+            // 
             // Deposit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(1064, 743);
+            this.ClientSize = new System.Drawing.Size(1130, 740);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.buttonAllTransaction);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonDepositBack);
@@ -191,13 +213,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxDepositCurrentBalance);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Deposit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Deposit";
             this.Load += new System.EventHandler(this.Deposit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,5 +238,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxDepositCurrentBalance;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
