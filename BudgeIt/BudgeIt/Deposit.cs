@@ -182,5 +182,10 @@ namespace BudgeIt
             //Bills B = new Bills();
             //B.ShowDialog();
         }
+
+        private void buttonDepositBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

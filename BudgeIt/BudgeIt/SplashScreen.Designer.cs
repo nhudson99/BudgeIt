@@ -36,7 +36,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 3000;
+            this.timer1.Interval = 7000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // SplashScreen
@@ -48,6 +48,7 @@
             this.ClientSize = new System.Drawing.Size(887, 611);
             this.DoubleBuffered = true;
             this.Name = "SplashScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SplashScreen";
             this.TransparencyKey = System.Drawing.SystemColors.Control;
             this.Load += new System.EventHandler(this.SplashScreen_Load);

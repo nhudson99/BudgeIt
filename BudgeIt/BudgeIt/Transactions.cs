@@ -78,5 +78,10 @@ namespace BudgeIt
 
             reader1.Close();
         }
+
+        private void buttonHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
