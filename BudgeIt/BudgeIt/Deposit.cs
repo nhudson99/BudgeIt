@@ -69,7 +69,7 @@ namespace BudgeIt
 
             reader.Close();
 
-            lblName.Text = Fname;
+            //lblName.Text = Fname;
         }
 
         private void comboBoxDepositUserID_SelectedIndexChanged(object sender, EventArgs e)
@@ -198,6 +198,11 @@ namespace BudgeIt
 
             //Bills B = new Bills();
             //B.ShowDialog();
+        }
+
+        private void buttonDepositBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

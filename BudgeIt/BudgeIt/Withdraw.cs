@@ -88,7 +88,7 @@ namespace BudgeIt
 
             reader.Close();
 
-            lblName.Text = Fname;
+            //lblName.Text = Fname;
         }
 
         // To clear parameters because if we need to make another operation -------------------------- MAJED
@@ -202,6 +202,11 @@ namespace BudgeIt
         private void buttonGoToDeposit_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonWithdrawBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -106,5 +106,15 @@ namespace BudgeIt
 
             reader1.Close();
         }
+
+        private void buttonHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonHome_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
