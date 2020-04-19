@@ -223,5 +223,15 @@ namespace BudgeIt
 
             Disposable.Text = (float.Parse(Income.Text) - float.Parse(Expenses.Text)).ToString();
         }
+
+        private void btnSchedule_Click(object sender, EventArgs e)
+        {
+            Schedule s = new Schedule();
+            s.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
+            s.Fname = Fname;
+            s.userID = userID;
+            s.ShowDialog();
+            Reload();
+        }
     }
 }
