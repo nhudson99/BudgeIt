@@ -217,6 +217,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "Deposit";
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 100, 100);
             this.Text = "Deposit";
             this.Load += new System.EventHandler(this.Deposit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

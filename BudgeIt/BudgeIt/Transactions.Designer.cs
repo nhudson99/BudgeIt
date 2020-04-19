@@ -61,7 +61,7 @@
             // 
             this.textBoxTransactionsCurrentBalance.Location = new System.Drawing.Point(310, 72);
             this.textBoxTransactionsCurrentBalance.Name = "textBoxTransactionsCurrentBalance";
-            this.textBoxTransactionsCurrentBalance.Size = new System.Drawing.Size(254, 20);
+            this.textBoxTransactionsCurrentBalance.Size = new System.Drawing.Size(504, 31);
             this.textBoxTransactionsCurrentBalance.TabIndex = 42;
             // 
             // buttonHome
@@ -105,10 +105,11 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(161, 123);
+            this.dataGridView1.Location = new System.Drawing.Point(322, 237);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(534, 295);
+            this.dataGridView1.Size = new System.Drawing.Size(1068, 567);
             this.dataGridView1.TabIndex = 38;
             // 
             // label5
@@ -116,9 +117,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Blue;
-            this.label5.Location = new System.Drawing.Point(304, -30);
+            this.label5.Location = new System.Drawing.Point(627, 9);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(249, 35);
+            this.label5.Size = new System.Drawing.Size(497, 70);
             this.label5.TabIndex = 35;
             this.label5.Text = "All Transactions";
             // 
@@ -171,7 +173,7 @@
             // 
             // Transactions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(877, 540);
@@ -187,6 +189,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Name = "Transactions";
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 100, 100);
             this.Text = "Transactions";
             this.Load += new System.EventHandler(this.Transactions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -40,7 +40,11 @@ namespace BudgeIt
                     Calendar form = new Calendar();
                     form.sqlConnection.ConnectionString = sqlConnection.ConnectionString;
                     form.userID = int.Parse(reader[0].ToString());
-                    form.Show();
+                    this.Hide();
+                    ClearControls();
+                    form.ShowDialog();
+                    this.Show();
+                    
                 }
                 else
                     throw new Exception("Invalid Login Attempt");
@@ -91,6 +95,12 @@ namespace BudgeIt
         private void txtUserName_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ClearControls()
+        {
+            txtUserName.Clear();
+            txtPassword.Clear();
         }
     }
 }

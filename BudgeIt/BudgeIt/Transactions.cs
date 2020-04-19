@@ -43,7 +43,7 @@ namespace BudgeIt
 
             while (reader.Read())
             {
-                comboBoxTransactionsUserID.Items.Add(reader[0].ToString());
+                //comboBoxTransactionsUserID.Items.Add(reader[0].ToString());
 
             }
 
