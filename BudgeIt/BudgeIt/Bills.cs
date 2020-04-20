@@ -101,62 +101,71 @@ namespace BudgeIt
 
         private void buttonBillsPay_Click(object sender, EventArgs e)
         {
-            String Type = "Bills";
-            DateTime Date = DateTime.Now;
-            decimal Amt = decimal.Parse(textBoxBillsAmount.Text);
-            string Notes = (textBoxDescription.Text);
-
-            decimal CurrentBalance = decimal.Parse(textBoxBillsCurrentBalance.Text);
-
-
-            if (Amt <= 0)
+            try
             {
-                MessageBox.Show("Amount must be > 0", "Bills");
-                return;
-            }
+                if (textBoxDescription.Text.Length > 50)
+                    throw new Exception("Description too long. Must be less that 50 characters");
+                String Type = textBoxDescription.Text;
+                DateTime Date = DateTime.Now;
+                decimal Amt = decimal.Parse(textBoxBillsAmount.Text);
+                string Notes = (textBoxDescription.Text);
 
-            // Get BILLS IDCount
-            int IDcount = 0;
-            SqlCommand cmdGet = sqlConnection.CreateCommand();
-            cmdGet.CommandText = "SELECT Count(*) FROM BILLS";
-            SqlDataReader reader = cmdGet.ExecuteReader();
-            if (reader.Read())
+                decimal CurrentBalance = decimal.Parse(textBoxBillsCurrentBalance.Text);
+
+
+                if (Amt <= 0)
+                {
+                    MessageBox.Show("Amount must be > 0", "Bills");
+                    return;
+                }
+
+                // Get BILLS IDCount
+                int IDcount = 0;
+                SqlCommand cmdGet = sqlConnection.CreateCommand();
+                cmdGet.CommandText = "SELECT Count(*) FROM BILLS";
+                SqlDataReader reader = cmdGet.ExecuteReader();
+                if (reader.Read())
+                {
+                    //MessageBox.Show(reader[0].ToString());
+                    IDcount = (int)(reader[0]);
+                    reader.Close();
+
+                }
+
+                Date = DTPBillDate.Value;
+
+                // sending a Bill value to the ( Stored Procedure ) to apply it on the database --------- NATE
+
+                SqlCommand cmdNewBill = sqlConnection.CreateCommand();
+                cmdNewBill.CommandText = "INSERT INTO BILLS(billId,note,amt,date,uId) VALUES(@tID,@Type,@Amt,@Date,@UserId)";
+                //cmdNewBill.CommandType = CommandType.StoredProcedure;
+
+                cmdNewBill.Parameters.AddWithValue("@tID", IDcount + 1);
+                cmdNewBill.Parameters.AddWithValue("@Type", Type);
+                cmdNewBill.Parameters.AddWithValue("@Date", Date);
+                cmdNewBill.Parameters.AddWithValue("@Amt", Amt);
+                cmdNewBill.Parameters.AddWithValue("@UserId", userID);
+
+                cmdNewBill.ExecuteNonQuery();
+
+                MessageBox.Show("The Bill has been scheduled");
+
+                //Clear your parameters to make another operation if you want ------------------------------ Eliseo
+                cmdNewBill.Parameters.Clear();
+
+                //textBoxBillsNewBalance.Text = (CurrentBalance - Amt).ToString();
+
+                //textBoxBillsCurrentBalance.Text = textBoxBillsNewBalance.Text;
+
+
+                textBoxBillsAmount.Text = "0.0";
+
+                textBoxDescription.Clear();
+            }
+            catch(Exception ex)
             {
-                //MessageBox.Show(reader[0].ToString());
-                IDcount = (int)(reader[0]);
-                reader.Close();
-
+                MessageBox.Show(ex.Message);
             }
-
-            Date = DTPBillDate.Value;
-
-            // sending a Bill value to the ( Stored Procedure ) to apply it on the database --------- NATE
-
-            SqlCommand cmdNewBill = sqlConnection.CreateCommand();
-            cmdNewBill.CommandText = "INSERT INTO BILLS(billId,name,amt,date,uId) VALUES(@tID,@Type,@Amt,@Date,@UserId)";
-            //cmdNewBill.CommandType = CommandType.StoredProcedure;
-
-            cmdNewBill.Parameters.AddWithValue("@tID", IDcount + 1);
-            cmdNewBill.Parameters.AddWithValue("@Type", Type);
-            cmdNewBill.Parameters.AddWithValue("@Date", Date);
-            cmdNewBill.Parameters.AddWithValue("@Amt", Amt);
-            cmdNewBill.Parameters.AddWithValue("@UserId", userID);
-
-            cmdNewBill.ExecuteNonQuery();
-
-            MessageBox.Show("The Bill has been scheduled");
-
-            //Clear your parameters to make another operation if you want ------------------------------ Eliseo
-            cmdNewBill.Parameters.Clear();
-
-            //textBoxBillsNewBalance.Text = (CurrentBalance - Amt).ToString();
-
-            //textBoxBillsCurrentBalance.Text = textBoxBillsNewBalance.Text;
-
-
-            textBoxBillsAmount.Text = "0.0";
-
-            textBoxDescription.Clear();
         }
         void ClearControls()
         {
