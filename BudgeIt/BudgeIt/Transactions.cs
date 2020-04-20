@@ -73,7 +73,7 @@ namespace BudgeIt
 
             while (reader1.Read())
             {
-                textBoxTransactionsCurrentBalance.Text = reader1[0].ToString();
+                textBoxTransactionsCurrentBalance.Text = String.Format("{0:$##.00}", reader1[0]);
             }
 
             reader1.Close();

@@ -16,6 +16,7 @@ namespace BudgeIt
         public SqlConnection sqlConnection = new SqlConnection();
         public int userID;
         public string Fname;
+        public float balF;
 
         public Bills()
         {
@@ -68,7 +69,7 @@ namespace BudgeIt
 
                 if (reader.Read())
                 {
-                    textBoxBillsCurrentBalance.Text = reader[0].ToString();
+                    textBoxBillsCurrentBalance.Text = String.Format("{0:$##.00}", reader[0]);
                     //textBoxBillsNewBalance.Text = "0.0";
                 }
 
@@ -110,7 +111,7 @@ namespace BudgeIt
                 decimal Amt = decimal.Parse(textBoxBillsAmount.Text);
                 string Notes = (textBoxDescription.Text);
 
-                decimal CurrentBalance = decimal.Parse(textBoxBillsCurrentBalance.Text);
+                //decimal CurrentBalance = decimal.Parse(textBoxBillsCurrentBalance.Text);
 
 
                 if (Amt <= 0)
@@ -166,6 +167,11 @@ namespace BudgeIt
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        void Reload()
+        {
+
         }
         void ClearControls()
         {

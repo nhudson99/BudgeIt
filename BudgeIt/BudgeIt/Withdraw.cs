@@ -16,7 +16,7 @@ namespace BudgeIt
         public SqlConnection sqlConnection = new SqlConnection();
         public int userID;
         public string Fname;
-
+        public float bal;
         public Withdraw()
         {
             InitializeComponent();
@@ -35,6 +35,7 @@ namespace BudgeIt
             {
                 textBoxWithdrawCurrentBalance.Text = reader[0].ToString();
                 textBoxWithdrawNewBalance.Text = "0.0";
+                bal = float.Parse(reader[0].ToString());
             }
 
             reader.Close();
@@ -82,8 +83,9 @@ namespace BudgeIt
 
             if (reader.Read())
             {
-                textBoxWithdrawCurrentBalance.Text = reader[0].ToString();
+                textBoxWithdrawCurrentBalance.Text = String.Format("{0:$##.00}", reader[0]);
                 textBoxWithdrawNewBalance.Text = "0.0";
+                bal = float.Parse(reader[0].ToString());
             }
 
             reader.Close();
@@ -123,7 +125,7 @@ namespace BudgeIt
             //int UserId = int.Parse(comboBoxWithdrawUserID.Text);
             string Notes = (textBoxDescription.Text);
 
-            decimal CurrentBalance = decimal.Parse(textBoxWithdrawCurrentBalance.Text);
+            //decimal CurrentBalance = decimal.Parse(textBoxWithdrawCurrentBalance.Text);
 
 
             if (Amt <= 0)
@@ -164,7 +166,7 @@ namespace BudgeIt
             //Clear your parameters to make another operation if you want ------------------------------ MAJED
             cmdNewWithdraw.Parameters.Clear();
 
-            textBoxWithdrawNewBalance.Text = (CurrentBalance - Amt).ToString();
+            textBoxWithdrawNewBalance.Text = String.Format("{0:$##.00}", (bal - float.Parse(Amt.ToString())));
 
             textBoxWithdrawCurrentBalance.Text = textBoxWithdrawNewBalance.Text;
 

@@ -20,7 +20,9 @@ namespace BudgeIt
             try
             {
                 sqlConnection.Open();
+                String d = monthCalendar1.SelectionRange.Start.ToShortDateString();
                 SqlCommand cmdGetName = sqlConnection.CreateCommand();
+                float income=0, disposable=0, expense=0;
 
                 cmdGetName.CommandText = "SELECT Fname FROM USERS WHERE userId = @uID";
                 cmdGetName.Parameters.AddWithValue("@uID", userID);
@@ -46,10 +48,10 @@ namespace BudgeIt
                 {
                     //MessageBox.Show(reader[0].ToString());
                     if(reader[0] != DBNull.Value)
-                        Expenses.Text = reader[0].ToString();
+                        expense = float.Parse(reader[0].ToString());
                     else
                     {
-                        Expenses.Text = "0";
+                        Expenses.Text = "$0";
                     }
                 }
                 reader.Close();
@@ -64,16 +66,53 @@ namespace BudgeIt
                 {
                     //MessageBox.Show(reader[0].ToString());
                     if (reader[0] != DBNull.Value)
-                        Income.Text = reader[0].ToString();
+                        income = float.Parse(reader[0].ToString());
                     else
                     {
-                        Income.Text = "0";
+                        Income.Text = "$0";
                     }
                 }
                 reader.Close();
 
-                Disposable.Text = (float.Parse(Income.Text) - float.Parse(Expenses.Text)).ToString();
+                Disposable.Text = String.Format("{0:$##.00}", (income-expense));
+                Income.Text = String.Format("{0:$##.00}", income);
+                Expenses.Text = String.Format("{0:$##.00}", expense);
 
+
+                SqlCommand cmdGetTrans = sqlConnection.CreateCommand();
+                cmdGetTrans.CommandText = "SELECT type, amt FROM [Transactions] WHERE uId = @uID AND date = @d";
+                cmdGetTrans.Parameters.AddWithValue("@uID", userID);
+                cmdGetTrans.Parameters.AddWithValue("@d", d);
+
+                reader = cmdGetTrans.ExecuteReader();
+
+                while(reader.Read())
+                {
+                    
+                    string s = String.Format("Type:{0}\tAmount:{1:$##.00}",reader["type"],reader["amt"]);
+                    
+                    LBTrans.Items.Add(s);
+
+                }
+
+                reader.Close();
+
+                SqlCommand cmdGetBills = sqlConnection.CreateCommand();
+                cmdGetBills.CommandText = "SELECT note, amt FROM [Bills] WHERE uId = @uID AND date = @d";
+                cmdGetBills.Parameters.AddWithValue("@uID", userID);
+                cmdGetBills.Parameters.AddWithValue("@d", d);
+
+                reader = cmdGetBills.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    string s = String.Format("Note:{0}\tAmount:{1:$##.00}", reader["note"], reader["amt"]);
+
+                    LBBills.Items.Add(s);
+
+                }
+                reader.Close();
 
             }
             catch (Exception ex)
@@ -185,20 +224,24 @@ namespace BudgeIt
 
         private void Reload()
         {
+            float income=0, expense = 0;
+            SqlDataReader reader;
+            String d = monthCalendar1.SelectionRange.Start.ToShortDateString();
+
             SqlCommand cmdGetExpenses = sqlConnection.CreateCommand();
             cmdGetExpenses.CommandText = "SELECT SUM(amt) FROM BILLS WHERE uId = @uID";
             cmdGetExpenses.Parameters.AddWithValue("@uID", userID);
 
-            SqlDataReader reader = cmdGetExpenses.ExecuteReader();
+            reader = cmdGetExpenses.ExecuteReader();
 
             if (reader.Read())
             {
                 //MessageBox.Show(reader[0].ToString());
                 if (reader[0] != DBNull.Value)
-                    Expenses.Text = reader[0].ToString();
+                    expense = float.Parse(reader[0].ToString());
                 else
                 {
-                    Expenses.Text = "0";
+                    Expenses.Text = "$0";
                 }
             }
             reader.Close();
@@ -213,15 +256,52 @@ namespace BudgeIt
             {
                 //MessageBox.Show(reader[0].ToString());
                 if (reader[0] != DBNull.Value)
-                    Income.Text = reader[0].ToString();
+                    income = float.Parse(reader[0].ToString());
                 else
                 {
-                    Income.Text = "0";
+                    Income.Text = "$0";
                 }
             }
             reader.Close();
 
-            Disposable.Text = (float.Parse(Income.Text) - float.Parse(Expenses.Text)).ToString();
+            Disposable.Text = String.Format("{0:$##.00}", (income - expense));
+            Income.Text = String.Format("{0:$##.00}", income);
+            Expenses.Text = String.Format("{0:$##.00}", expense);
+
+            SqlCommand cmdGetTrans = sqlConnection.CreateCommand();
+            cmdGetTrans.CommandText = "SELECT type, amt FROM [Transactions] WHERE uId = @uID AND date = @d";
+            cmdGetTrans.Parameters.AddWithValue("@uID", userID);
+            cmdGetTrans.Parameters.AddWithValue("@d", d);
+
+            reader = cmdGetTrans.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                string s = String.Format("Type:{0}\tAmount:{1:$##.00}", reader["type"], reader["amt"]);
+
+                LBTrans.Items.Add(s);
+
+            }
+
+            reader.Close();
+
+            SqlCommand cmdGetBills = sqlConnection.CreateCommand();
+            cmdGetBills.CommandText = "SELECT note, amt FROM [Bills] WHERE uId = @uID AND date = @d";
+            cmdGetBills.Parameters.AddWithValue("@uID", userID);
+            cmdGetBills.Parameters.AddWithValue("@d", d);
+
+            reader = cmdGetBills.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                string s = String.Format("Note:{0}\tAmount:{1:$##.00}", reader["note"], reader["amt"]);
+
+                LBBills.Items.Add(s);
+
+            }
+            reader.Close();
         }
 
         private void btnSchedule_Click(object sender, EventArgs e)
@@ -232,6 +312,20 @@ namespace BudgeIt
             s.userID = userID;
             s.ShowDialog();
             Reload();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            LBTrans.Items.Clear();
+            LBBills.Items.Clear();
+
+            Reload();
+            
         }
     }
 }

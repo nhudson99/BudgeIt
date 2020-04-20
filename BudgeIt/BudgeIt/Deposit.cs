@@ -16,6 +16,7 @@ namespace BudgeIt
         public SqlConnection sqlConnection1 = new SqlConnection();
         public int userID;
         public string Fname;
+        public float bal;
 
         public Deposit()
         {
@@ -63,8 +64,9 @@ namespace BudgeIt
 
             if (reader.Read())
             {
-                textBoxDepositCurrentBalance.Text = reader[0].ToString();
+                textBoxDepositCurrentBalance.Text = String.Format("{0:$##.00}", reader[0]);
                 textBoxDepositNewBalance.Text = "0.0";
+                bal = float.Parse(reader[0].ToString());
             }
 
             reader.Close();
@@ -123,7 +125,7 @@ namespace BudgeIt
                 decimal Amt = decimal.Parse(textBoxDepositAmount.Text);
                 
 
-                decimal CurrentBalance = decimal.Parse(textBoxDepositCurrentBalance.Text);
+                //decimal CurrentBalance = decimal.Parse(textBoxDepositCurrentBalance.Text);
 
                 if (Amt <= 0)
                 {
@@ -163,7 +165,7 @@ namespace BudgeIt
                 //Clear your parameters to make another operation if you want ------------------------------ MAJED
                 cmdNewDeposit.Parameters.Clear();
 
-                textBoxDepositNewBalance.Text = (CurrentBalance + Amt).ToString();
+                textBoxDepositNewBalance.Text = String.Format("{0:$##.00}", (bal + float.Parse(Amt.ToString())));
 
                 textBoxDepositCurrentBalance.Text = textBoxDepositNewBalance.Text;
 

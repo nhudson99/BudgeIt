@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bills));
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
-            this.label8 = new System.Windows.Forms.Label();
             this.buttonAllTransaction = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,16 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(616, 110);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(18, 18);
-            this.label7.TabIndex = 66;
-            this.label7.Text = "$";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -70,9 +58,9 @@
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(151, 188);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 19);
+            this.label6.Size = new System.Drawing.Size(175, 19);
             this.label6.TabIndex = 65;
-            this.label6.Text = "Bill Note :";
+            this.label6.Text = "One Word Bill Note :";
             // 
             // textBoxDescription
             // 
@@ -85,16 +73,6 @@
             // 
             this.sqlConnection1.ConnectionString = "Data Source=KFSC-PC;Initial Catalog=TestMoney;Integrated Security=True";
             this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(616, 149);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(18, 18);
-            this.label8.TabIndex = 67;
-            this.label8.Text = "$";
             // 
             // buttonAllTransaction
             // 
@@ -232,7 +210,7 @@
             // DTPBillDate
             // 
             this.DTPBillDate.Location = new System.Drawing.Point(356, 223);
-            this.DTPBillDate.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.DTPBillDate.Margin = new System.Windows.Forms.Padding(1);
             this.DTPBillDate.Name = "DTPBillDate";
             this.DTPBillDate.Size = new System.Drawing.Size(254, 20);
             this.DTPBillDate.TabIndex = 71;
@@ -241,7 +219,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(8, 87);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(831, 482);
             this.pictureBox1.TabIndex = 72;
@@ -267,10 +245,8 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.DTPBillDate);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxDescription);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.buttonAllTransaction);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -294,11 +270,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Data.SqlClient.SqlConnection sqlConnection1;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button buttonAllTransaction;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
