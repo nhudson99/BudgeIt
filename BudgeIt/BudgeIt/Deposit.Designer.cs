@@ -187,11 +187,11 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(891, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(811, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(241, 208);
+            this.pictureBox2.Size = new System.Drawing.Size(316, 287);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 46;
+            this.pictureBox2.TabIndex = 89;
             this.pictureBox2.TabStop = false;
             // 
             // Deposit
@@ -213,7 +213,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxDepositCurrentBalance);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Deposit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Deposit";
