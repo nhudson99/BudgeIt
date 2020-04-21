@@ -123,7 +123,7 @@ namespace BudgeIt
                 // Get BILLS IDCount
                 int IDcount = 0;
                 SqlCommand cmdGet = sqlConnection.CreateCommand();
-                cmdGet.CommandText = "SELECT Count(*) FROM BILLS";
+                cmdGet.CommandText = "SELECT Max(billId) FROM BILLS";
                 SqlDataReader reader = cmdGet.ExecuteReader();
                 if (reader.Read())
                 {
