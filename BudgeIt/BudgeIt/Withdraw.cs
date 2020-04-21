@@ -137,7 +137,7 @@ namespace BudgeIt
             // Get transaction IDCount
             int IDcount = 0;
             SqlCommand cmdGet = sqlConnection.CreateCommand();
-            cmdGet.CommandText = "SELECT Count(*) FROM TRANSACTIONS";
+            cmdGet.CommandText = "SELECT Max(transactionId) FROM TRANSACTIONS";
             SqlDataReader reader = cmdGet.ExecuteReader();
             if (reader.Read())
             {
