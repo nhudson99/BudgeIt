@@ -224,6 +224,9 @@ namespace BudgeIt
 
         private void Reload()
         {
+            LBTrans.Items.Clear();
+            LBBills.Items.Clear();
+
             float income=0, expense = 0;
             SqlDataReader reader;
             String d = monthCalendar1.SelectionRange.Start.ToShortDateString();
@@ -321,8 +324,7 @@ namespace BudgeIt
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            LBTrans.Items.Clear();
-            LBBills.Items.Clear();
+
 
             Reload();
             
