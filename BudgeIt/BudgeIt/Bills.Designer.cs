@@ -56,17 +56,19 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(151, 188);
+            this.label6.Location = new System.Drawing.Point(226, 289);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(175, 19);
+            this.label6.Size = new System.Drawing.Size(257, 29);
             this.label6.TabIndex = 65;
             this.label6.Text = "One Word Bill Note :";
             // 
             // textBoxDescription
             // 
-            this.textBoxDescription.Location = new System.Drawing.Point(356, 188);
+            this.textBoxDescription.Location = new System.Drawing.Point(534, 289);
+            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.Size = new System.Drawing.Size(254, 20);
+            this.textBoxDescription.Size = new System.Drawing.Size(379, 26);
             this.textBoxDescription.TabIndex = 64;
             // 
             // sqlConnection1
@@ -79,9 +81,10 @@
             this.buttonAllTransaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.buttonAllTransaction.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAllTransaction.ForeColor = System.Drawing.Color.Black;
-            this.buttonAllTransaction.Location = new System.Drawing.Point(401, 333);
+            this.buttonAllTransaction.Location = new System.Drawing.Point(602, 512);
+            this.buttonAllTransaction.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonAllTransaction.Name = "buttonAllTransaction";
-            this.buttonAllTransaction.Size = new System.Drawing.Size(167, 32);
+            this.buttonAllTransaction.Size = new System.Drawing.Size(250, 49);
             this.buttonAllTransaction.TabIndex = 62;
             this.buttonAllTransaction.Text = "All Transaction";
             this.buttonAllTransaction.UseVisualStyleBackColor = false;
@@ -93,9 +96,10 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label5.Font = new System.Drawing.Font("Tahoma", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(436, 10);
+            this.label5.Location = new System.Drawing.Point(654, 15);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 35);
+            this.label5.Size = new System.Drawing.Size(115, 53);
             this.label5.TabIndex = 60;
             this.label5.Text = "Bills";
             // 
@@ -104,9 +108,10 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(151, 150);
+            this.label3.Location = new System.Drawing.Point(226, 231);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(193, 19);
+            this.label3.Size = new System.Drawing.Size(281, 29);
             this.label3.TabIndex = 59;
             this.label3.Text = "Enter the bill amount :";
             // 
@@ -115,9 +120,10 @@
             this.buttonWithdrawBack.BackColor = System.Drawing.Color.Black;
             this.buttonWithdrawBack.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.buttonWithdrawBack.ForeColor = System.Drawing.Color.White;
-            this.buttonWithdrawBack.Location = new System.Drawing.Point(537, 261);
+            this.buttonWithdrawBack.Location = new System.Drawing.Point(806, 402);
+            this.buttonWithdrawBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonWithdrawBack.Name = "buttonWithdrawBack";
-            this.buttonWithdrawBack.Size = new System.Drawing.Size(99, 50);
+            this.buttonWithdrawBack.Size = new System.Drawing.Size(148, 77);
             this.buttonWithdrawBack.TabIndex = 56;
             this.buttonWithdrawBack.Text = "Back";
             this.buttonWithdrawBack.UseVisualStyleBackColor = false;
@@ -125,9 +131,10 @@
             // 
             // textBoxBillsAmount
             // 
-            this.textBoxBillsAmount.Location = new System.Drawing.Point(356, 151);
+            this.textBoxBillsAmount.Location = new System.Drawing.Point(534, 232);
+            this.textBoxBillsAmount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxBillsAmount.Name = "textBoxBillsAmount";
-            this.textBoxBillsAmount.Size = new System.Drawing.Size(254, 20);
+            this.textBoxBillsAmount.Size = new System.Drawing.Size(379, 26);
             this.textBoxBillsAmount.TabIndex = 55;
             // 
             // buttonBillsDelete
@@ -135,9 +142,10 @@
             this.buttonBillsDelete.BackColor = System.Drawing.Color.Black;
             this.buttonBillsDelete.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBillsDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonBillsDelete.Location = new System.Drawing.Point(433, 261);
+            this.buttonBillsDelete.Location = new System.Drawing.Point(650, 402);
+            this.buttonBillsDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonBillsDelete.Name = "buttonBillsDelete";
-            this.buttonBillsDelete.Size = new System.Drawing.Size(99, 50);
+            this.buttonBillsDelete.Size = new System.Drawing.Size(148, 77);
             this.buttonBillsDelete.TabIndex = 54;
             this.buttonBillsDelete.Text = "Clear";
             this.buttonBillsDelete.UseVisualStyleBackColor = false;
@@ -148,9 +156,10 @@
             this.buttonBillsPay.BackColor = System.Drawing.Color.Black;
             this.buttonBillsPay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBillsPay.ForeColor = System.Drawing.Color.White;
-            this.buttonBillsPay.Location = new System.Drawing.Point(328, 261);
+            this.buttonBillsPay.Location = new System.Drawing.Point(492, 402);
+            this.buttonBillsPay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonBillsPay.Name = "buttonBillsPay";
-            this.buttonBillsPay.Size = new System.Drawing.Size(99, 50);
+            this.buttonBillsPay.Size = new System.Drawing.Size(148, 77);
             this.buttonBillsPay.TabIndex = 53;
             this.buttonBillsPay.Text = "Schedule";
             this.buttonBillsPay.UseVisualStyleBackColor = false;
@@ -161,27 +170,29 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(151, 109);
+            this.label1.Location = new System.Drawing.Point(226, 168);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 19);
+            this.label1.Size = new System.Drawing.Size(244, 29);
             this.label1.TabIndex = 50;
             this.label1.Text = "Current balance is :";
             // 
             // textBoxBillsCurrentBalance
             // 
-            this.textBoxBillsCurrentBalance.Location = new System.Drawing.Point(356, 110);
+            this.textBoxBillsCurrentBalance.Location = new System.Drawing.Point(534, 169);
+            this.textBoxBillsCurrentBalance.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxBillsCurrentBalance.Name = "textBoxBillsCurrentBalance";
-            this.textBoxBillsCurrentBalance.Size = new System.Drawing.Size(254, 20);
+            this.textBoxBillsCurrentBalance.Size = new System.Drawing.Size(379, 26);
             this.textBoxBillsCurrentBalance.TabIndex = 49;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(7, 10);
-            this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label4.Location = new System.Drawing.Point(10, 15);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(176, 39);
+            this.label4.Size = new System.Drawing.Size(256, 58);
             this.label4.TabIndex = 69;
             this.label4.Text = "Welcome,";
             // 
@@ -189,10 +200,10 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(7, 47);
-            this.lblName.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lblName.Location = new System.Drawing.Point(10, 72);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(115, 39);
+            this.lblName.Size = new System.Drawing.Size(165, 58);
             this.lblName.TabIndex = 70;
             this.lblName.Text = "label9";
             // 
@@ -201,46 +212,47 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(151, 221);
+            this.label2.Location = new System.Drawing.Point(226, 340);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 19);
+            this.label2.Size = new System.Drawing.Size(165, 29);
             this.label2.TabIndex = 52;
             this.label2.Text = "Select Date :";
             // 
             // DTPBillDate
             // 
-            this.DTPBillDate.Location = new System.Drawing.Point(356, 223);
-            this.DTPBillDate.Margin = new System.Windows.Forms.Padding(1);
+            this.DTPBillDate.Location = new System.Drawing.Point(534, 343);
+            this.DTPBillDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DTPBillDate.Name = "DTPBillDate";
-            this.DTPBillDate.Size = new System.Drawing.Size(254, 20);
+            this.DTPBillDate.Size = new System.Drawing.Size(379, 26);
             this.DTPBillDate.TabIndex = 71;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(8, 87);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 134);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(831, 482);
+            this.pictureBox1.Size = new System.Drawing.Size(1246, 742);
             this.pictureBox1.TabIndex = 72;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(942, -1);
+            this.pictureBox2.Location = new System.Drawing.Point(962, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(316, 287);
+            this.pictureBox2.Size = new System.Drawing.Size(474, 442);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 89;
             this.pictureBox2.TabStop = false;
             // 
             // Bills
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(1258, 745);
+            this.ClientSize = new System.Drawing.Size(1887, 1146);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.label4);
@@ -258,6 +270,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxBillsCurrentBalance);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Bills";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bills";
